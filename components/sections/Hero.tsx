@@ -19,7 +19,7 @@ const cardSlide = {
   animate: {
     opacity: 1,
     x: 0,
-    transition: { type: 'spring', stiffness: 80, damping: 18 },
+    transition: { type: 'spring' as const, stiffness: 80, damping: 18 },
   },
 };
 
@@ -91,7 +91,7 @@ export default function Hero() {
             {/* Code token */}
             <motion.div
               variants={skip ? undefined : fadeUp}
-              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] as const }}
             >
               <span
                 className="inline-flex items-center gap-1 rounded-md border px-3 py-1.5 font-mono text-sm text-accent-blue"
@@ -106,7 +106,7 @@ export default function Hero() {
             <motion.p
               className="text-text-secondary text-body"
               variants={skip ? undefined : fadeUp}
-              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] as const }}
             >
               Hi, I&apos;m
             </motion.p>
@@ -115,7 +115,7 @@ export default function Hero() {
             <motion.h1
               className="font-display text-display text-text-primary font-extrabold"
               variants={skip ? undefined : fadeUp}
-              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] as const }}
             >
               {PERSONAL.name.toUpperCase()}
             </motion.h1>
@@ -124,7 +124,7 @@ export default function Hero() {
             <motion.p
               className="text-accent-blue text-h2 font-medium"
               variants={skip ? undefined : fadeUp}
-              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] as const }}
             >
               {PERSONAL.role}
             </motion.p>
@@ -133,7 +133,7 @@ export default function Hero() {
             <motion.p
               className="text-text-secondary text-body max-w-md"
               variants={skip ? undefined : fadeUp}
-              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] as const }}
             >
               {PERSONAL.tagline}
             </motion.p>
@@ -142,7 +142,7 @@ export default function Hero() {
             <motion.div
               className="flex flex-wrap gap-4 mt-2"
               variants={skip ? undefined : fadeUp}
-              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] as const }}
             >
               <Link
                 href="#projects"
