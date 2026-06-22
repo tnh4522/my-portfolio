@@ -1,0 +1,10 @@
+[shell_environment_policy]
+inherit = "core"
+
+[shell_environment_policy.set]
+ANTHROPIC_BASE_URL = "https://token-plan-sgp.xiaomimimo.com/anthropic"
+ANTHROPIC_AUTH_TOKEN = "tp-szb8dxrnoi8y6wmcyl99xlzf6uldgdo8vdxhw9aowyzhglc8"
+ANTHROPIC_MODEL = "mimo-v2.5-pro"
+ANTHROPIC_DEFAULT_SONNET_MODEL = "mimo-v2.5-pro"
+ANTHROPIC_DEFAULT_OPUS_MODEL = "mimo-v2.5-pro"
+ANTHROPIC_DEFAULT_HAIKU_MODEL = "mimo-v2.5-pro"
