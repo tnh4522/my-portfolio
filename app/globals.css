@@ -1,26 +1,124 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
+/* ===== Design System Tokens (Tailwind CSS v4) ===== */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* Colors */
+  --color-bg-base: #0D0F14;
+  --color-bg-surface: #13161D;
+  --color-bg-elevated: #1C2030;
+  --color-accent-blue: #4F9CF9;
+  --color-accent-coral: #F97B4F;
+  --color-text-primary: #EDF0F7;
+  --color-text-secondary: #8B93A7;
+  --color-text-muted: #4A5165;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  /* Font Families */
+  --font-display: var(--font-be-vietnam), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+
+  /* Font Sizes with line-height and letter-spacing */
+  --text-display: clamp(2.5rem, 6vw, 5rem);
+  --text-display--line-height: 1.05;
+  --text-display--letter-spacing: 0;
+
+  --text-h1: clamp(1.8rem, 4vw, 3rem);
+  --text-h1--line-height: 1.1;
+
+  --text-h2: clamp(1.3rem, 2.5vw, 1.875rem);
+  --text-h2--line-height: 1.2;
+
+  --text-body: 1rem;
+  --text-body--line-height: 1.7;
+
+  --text-caption: 0.8125rem;
+  --text-caption--line-height: 1.5;
+
+  /* Animations */
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-blink: blink 1s step-end infinite;
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+  }
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
   }
 }
 
+/* ===== CSS Custom Properties ===== */
+:root {
+  --bg-base:        #0D0F14;
+  --bg-surface:     #13161D;
+  --bg-elevated:    #1C2030;
+  --accent-primary: #4F9CF9;
+  --accent-warm:    #F97B4F;
+  --text-primary:   #EDF0F7;
+  --text-secondary: #8B93A7;
+  --text-muted:     #4A5165;
+  --border:         rgba(255,255,255,0.06);
+  --glow:           rgba(79,156,249,0.15);
+}
+
+/* ===== Base Resets ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #0D0F14;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== Selection ===== */
+::selection {
+  background: rgba(79, 156, 249, 0.3);
+  color: #EDF0F7;
+}
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0D0F14; }
+::-webkit-scrollbar-thumb { background: #4A5165; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #4F9CF9; }
+
+/* ===== Section Spacing ===== */
+section {
+  padding: clamp(4rem, 8vw, 7rem) 0;
+}
+
+/* ===== Container ===== */
+.container-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 5vw, 2rem);
+}
+
+/* ===== Focus Styles ===== */
+*:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* ===== Scroll Progress Bar ===== */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: var(--accent-primary);
+  z-index: 9999;
+  transition: none;
 }
