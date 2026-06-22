@@ -12,11 +12,11 @@ export default function ProjectCard({ project }: ProjectCardProps) {
     <div
       className="group relative bg-bg-surface rounded-xl p-6 border transition-all duration-300 hover:-translate-y-1 hover:border-accent-blue flex flex-col h-full"
       style={{
-        borderColor: 'rgba(255,255,255,0.06)',
+        borderColor: 'var(--border)',
       }}
       onMouseEnter={(e) => {
         e.currentTarget.style.boxShadow = '0 8px 30px rgba(79,156,249,0.15)';
-        e.currentTarget.style.backgroundColor = '#1C2030';
+        e.currentTarget.style.backgroundColor = 'var(--bg-elevated)';
       }}
       onMouseLeave={(e) => {
         e.currentTarget.style.boxShadow = 'none';

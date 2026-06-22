@@ -9,18 +9,18 @@ interface AwardBadgeProps {
 
 const tierConfig = {
   gold: {
-    borderColor: 'border-accent-coral',
     icon: '🏆',
+    borderColor: '#F97B4F',
     glowColor: 'rgba(249, 123, 79, 0.15)',
   },
   silver: {
-    borderColor: 'border-text-secondary',
     icon: '🥈',
+    borderColor: '#8B93A7',
     glowColor: 'transparent',
   },
   bronze: {
-    borderColor: 'border-[#CD7F32]',
     icon: '🥉',
+    borderColor: '#CD7F32',
     glowColor: 'transparent',
   },
 };
@@ -33,12 +33,12 @@ export default function AwardBadge({ award, featured }: AwardBadgeProps) {
       className={`
         relative bg-bg-surface rounded-xl p-6 border transition-all duration-300
         hover:-translate-y-1 hover:border-accent-blue
-        ${config.borderColor}
+        h-full flex flex-col
         ${featured ? 'ring-1 ring-accent-coral/30' : ''}
       `}
       style={{
-        borderColor: award.tier === 'bronze' ? '#CD7F32' : undefined,
-        boxShadow: featured ? `0 0 30px ${tierConfig.gold.glowColor}` : undefined,
+        borderColor: config.borderColor,
+        boxShadow: featured ? `0 0 30px ${config.glowColor}` : undefined,
       }}
     >
       <div className="flex items-start justify-between mb-3">
@@ -51,10 +51,10 @@ export default function AwardBadge({ award, featured }: AwardBadgeProps) {
       <p className="font-display font-bold text-text-primary text-body mb-1">
         {award.prize}
       </p>
-      <p className="text-text-secondary text-caption mb-2 leading-relaxed">
+      <p className="text-text-secondary text-caption mb-2 leading-relaxed flex-1">
         {award.title}
       </p>
-      <p className="text-text-muted text-caption">
+      <p className="text-text-muted text-caption mt-auto">
         {award.issuer}
       </p>
     </div>

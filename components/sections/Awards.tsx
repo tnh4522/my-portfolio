@@ -8,7 +8,7 @@ import SectionHeading from '@/components/ui/SectionHeading';
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
+  transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] as const },
 };
 
 const staggerContainer = {
@@ -36,9 +36,7 @@ export default function Awards() {
             return (
               <motion.div
                 key={award.title}
-                className={
-                  isGold ? 'md:col-span-2 lg:col-span-1' : undefined
-                }
+                className={`h-full ${isGold ? 'md:col-span-2 lg:col-span-1' : ''}`}
                 variants={prefersReducedMotion ? undefined : fadeUp}
                 style={
                   isGold

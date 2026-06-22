@@ -1,6 +1,7 @@
 'use client';
 
 import { motion, useReducedMotion } from 'framer-motion';
+import Image from 'next/image';
 import { PERSONAL } from '@/lib/data';
 import SectionHeading from '@/components/ui/SectionHeading';
 
@@ -39,8 +40,32 @@ export default function About() {
           whileInView="animate"
           viewport={{ once: true, margin: '-100px' }}
         >
-          {/* ── Left column: bio + education ── */}
+          {/* ── Left column: avatar + bio + education ── */}
           <div className="flex flex-col gap-8">
+            {/* Avatar + name card */}
+            <motion.div
+              className="flex items-center gap-5"
+              variants={skip ? undefined : fadeUp}
+              transition={fadeUp.transition}
+            >
+              <div className="w-24 h-24 rounded-2xl overflow-hidden shrink-0 ring-2 ring-accent-blue/30 ring-offset-2 ring-offset-bg-base">
+                <Image
+                  src="/images/avatar.jpg"
+                  alt={`Photo of ${PERSONAL.name}`}
+                  width={96}
+                  height={96}
+                  className="object-cover w-full h-full"
+                />
+              </div>
+              <div>
+                <h3 className="font-display text-text-primary font-bold text-lg">
+                  {PERSONAL.name}
+                </h3>
+                <p className="text-accent-blue text-sm font-medium">{PERSONAL.role}</p>
+                <p className="text-text-muted text-caption mt-1">📍 Da Nang, Vietnam</p>
+              </div>
+            </motion.div>
+
             {/* Bio */}
             <motion.p
               className="text-text-secondary text-body leading-relaxed"
@@ -52,8 +77,8 @@ export default function About() {
 
             {/* Education card */}
             <motion.div
-              className="rounded-xl bg-bg-surface p-5 border-l-[3px] border-l-accent-blue"
-              style={{ border: '1px solid rgba(255,255,255,0.06)', borderLeft: '3px solid var(--color-accent-blue)' }}
+              className="rounded-xl bg-bg-surface p-5"
+              style={{ border: '1px solid var(--border)', borderLeft: '3px solid var(--color-accent-blue)' }}
               variants={skip ? undefined : fadeUp}
               transition={fadeUp.transition}
             >
@@ -68,12 +93,12 @@ export default function About() {
           </div>
 
           {/* ── Right column: stats grid ── */}
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 gap-4 content-start">
             {stats.map((stat) => (
               <motion.div
                 key={stat.label}
-                className="rounded-xl bg-bg-surface p-5 flex flex-col gap-1"
-                style={{ border: '1px solid rgba(255,255,255,0.06)' }}
+                className="rounded-xl bg-bg-surface p-5 flex flex-col gap-1 h-full"
+                style={{ border: '1px solid var(--border)' }}
                 variants={skip ? undefined : fadeUp}
                 transition={fadeUp.transition}
               >

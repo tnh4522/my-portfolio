@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import { PERSONAL } from '@/lib/data';
 
 /* ── animation presets ── */
@@ -88,11 +89,29 @@ export default function Hero() {
             initial="initial"
             animate="animate"
           >
-            {/* Code token */}
+            {/* Avatar + Code token row */}
             <motion.div
+              className="flex items-center gap-4"
               variants={skip ? undefined : fadeUp}
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] as const }}
             >
+              {/* Avatar */}
+              <div className="relative shrink-0">
+                <div className="w-20 h-20 rounded-full overflow-hidden ring-2 ring-accent-blue/40 ring-offset-2 ring-offset-bg-base">
+                  <Image
+                    src="/images/avatar.jpg"
+                    alt={`Photo of ${PERSONAL.name}`}
+                    width={80}
+                    height={80}
+                    className="object-cover w-full h-full"
+                    priority
+                  />
+                </div>
+                {/* Online indicator */}
+                <span className="absolute bottom-0 right-0 w-4 h-4 bg-green-500 rounded-full border-2 border-bg-base animate-pulse" aria-hidden="true" />
+              </div>
+
+              {/* Code token */}
               <span
                 className="inline-flex items-center gap-1 rounded-md border px-3 py-1.5 font-mono text-sm text-accent-blue"
                 style={{ borderColor: 'var(--color-accent-blue)' }}
@@ -151,13 +170,11 @@ export default function Hero() {
                 View My Work ↓
               </Link>
               <Link
-                href="/resume.pdf"
+                href="/resume"
                 className="inline-flex items-center justify-center rounded-lg border px-6 py-3 text-sm font-medium text-accent-blue transition-colors hover:bg-accent-blue/10"
                 style={{ borderColor: 'var(--color-accent-blue)' }}
-                target="_blank"
-                rel="noopener noreferrer"
               >
-                Download CV
+                Resume
               </Link>
             </motion.div>
           </motion.div>
@@ -174,7 +191,7 @@ export default function Hero() {
                 key={card.key}
                 className="flex flex-col gap-1 rounded-xl bg-bg-surface p-5 w-full md:max-w-[280px] animate-float"
                 style={{
-                  border: '1px solid rgba(255,255,255,0.06)',
+                  border: '1px solid var(--border)',
                   animationDelay: `${card.delay}s`,
                 }}
                 variants={skip ? undefined : cardSlide}

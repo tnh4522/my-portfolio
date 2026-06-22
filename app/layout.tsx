@@ -55,6 +55,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${display.variable} ${inter.variable} ${jetbrainsMono.variable} scroll-smooth`}
+      data-scroll-behavior="smooth"
       suppressHydrationWarning
     >
       <body className="min-h-screen bg-bg-base text-text-primary font-body antialiased">
