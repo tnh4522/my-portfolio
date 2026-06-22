@@ -84,7 +84,7 @@ export default function Navbar() {
             ? 'bg-bg-base/80 backdrop-blur-md border-b'
             : 'bg-transparent'
         }`}
-        style={{ borderColor: scrolled ? 'rgba(255,255,255,0.06)' : 'transparent' }}
+        style={{ borderColor: scrolled ? 'var(--border)' : 'transparent' }}
       >
         <div className="container-inner flex items-center justify-between h-16">
           {/* Logo */}
@@ -124,14 +124,12 @@ export default function Navbar() {
 
           {/* Right side */}
           <div className="hidden md:flex items-center gap-3">
-            <a
-              href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/resume"
               className="px-4 py-2 text-sm font-medium text-accent-blue border border-accent-blue/40 rounded-lg hover:bg-accent-blue/10 transition-colors"
             >
               Resume
-            </a>
+            </Link>
             {mounted && (
               <button
                 onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
@@ -194,14 +192,13 @@ export default function Navbar() {
               ))}
 
               <div className="flex items-center gap-4 mt-8">
-                <a
-                  href="/resume.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/resume"
                   className="px-6 py-3 text-sm font-medium text-accent-blue border border-accent-blue/40 rounded-lg hover:bg-accent-blue/10 transition-colors"
+                  onClick={handleNavClick}
                 >
                   Resume
-                </a>
+                </Link>
                 {mounted && (
                   <button
                     onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}

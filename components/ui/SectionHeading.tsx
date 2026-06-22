@@ -16,7 +16,7 @@ export default function SectionHeading({ title, subtitle }: SectionHeadingProps)
       initial={prefersReducedMotion ? undefined : { opacity: 0, y: 24 }}
       whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-100px' }}
-      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] as const }}
     >
       <div className="flex items-center gap-4 mb-3">
         <div className="h-px w-8 bg-accent-blue" />

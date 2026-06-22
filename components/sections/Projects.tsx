@@ -37,6 +37,7 @@ export default function Projects() {
           {featured.map((project) => (
             <motion.div
               key={project.id}
+              className="h-full"
               variants={
                 prefersReducedMotion
                   ? undefined
@@ -60,6 +61,7 @@ export default function Projects() {
           {rest.map((project) => (
             <motion.div
               key={project.id}
+              className="h-full"
               variants={
                 prefersReducedMotion
                   ? undefined
