@@ -9,6 +9,7 @@ interface TimelineItemProps {
   period: string;
   type: 'full-time' | 'internship';
   bullets: string[];
+  techStack?: string[];
   isActive?: boolean;
 }
 
@@ -25,6 +26,7 @@ export default function TimelineItem({
   period,
   type,
   bullets,
+  techStack,
   isActive = false,
 }: TimelineItemProps) {
   const prefersReducedMotion = useReducedMotion();
@@ -89,6 +91,20 @@ export default function TimelineItem({
             </li>
           ))}
         </ul>
+
+        {/* Tech stack tags */}
+        {techStack && techStack.length > 0 && (
+          <div className="flex flex-wrap gap-1.5 mt-4">
+            {techStack.map((tech) => (
+              <span
+                key={tech}
+                className="rounded-md bg-bg-elevated px-2 py-0.5 text-xs font-mono text-text-secondary"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
     </motion.div>
   );

@@ -33,7 +33,7 @@ const floatingCards = [
       <>
         <span className="text-text-secondary text-caption">Currently at</span>
         <span className="font-display text-lg font-bold text-text-primary">
-          Lundi Matin
+          Lundi Matin Groupe
         </span>
         <span className="mt-1 inline-block rounded-full bg-bg-elevated px-3 py-0.5 text-xs text-text-secondary">
           France 🇫🇷
@@ -46,7 +46,7 @@ const floatingCards = [
     delay: 0.8,
     content: (
       <div className="flex flex-wrap gap-2">
-        {['PHP', 'React', 'Python', 'TypeScript'].map((tech) => (
+        {['Drupal', 'React', 'PHP', 'Tailwind'].map((tech) => (
           <span
             key={tech}
             className="rounded-md bg-bg-elevated px-2.5 py-1 text-xs font-medium text-text-primary"

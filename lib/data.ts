@@ -10,23 +10,25 @@ export const PERSONAL = {
   location: 'Hoa Khanh Bac, Lien Chieu, Da Nang, Vietnam',
   linkedin: 'https://www.linkedin.com/in/tran-huy-183ba1194',
   github: 'https://github.com/',
-  bio: `I'm a software engineering graduate from Da Nang University of Science and Technology, currently working full-time as a Full-stack Developer at Lundi Matin — a French e-commerce software company. Day-to-day, I work on a live retail platform used by thousands of merchants across France, collaborating directly with Product Owners and cross-functional teams in a French-language environment. I care about clean interfaces, reliable code, and building things that actually get used.`,
+  website: 'https://huytran-4522.vercel.app',
+  bio: `Web developer with 2+ years of hands-on experience building and shipping customer-facing e-commerce interfaces, currently working full-time on a live retail platform at Lundi Matin Groupe (France). I combine solid frontend skills (HTML5, CSS3, JavaScript, jQuery, ReactJS) with a product-first mindset — thinking from the end user's perspective to remove friction, simplify flows, and write copy that drives action. Comfortable customizing CMS-driven pages beyond what default builders offer, and experienced working iteratively with real content on production websites. I care about clean interfaces, reliable code, and building things that actually get used.`,
 };
 
 export const EXPERIENCES: Experience[] = [
   {
-    company: 'Lundi Matin',
+    company: 'Lundi Matin Groupe',
     location: 'France (Remote)',
     role: 'Full-stack Developer',
     period: '2024 – Present',
     type: 'full-time',
     bullets: [
-      'Work on the customer-facing e-commerce platform (LMB) used by online and brick-and-mortar retail clients across France.',
-      'Collaborate with Product Owners in a French-language environment to translate business requirements into front-end features.',
-      'Contribute custom HTML/CSS/JS overrides to extend the platform\'s default builder capabilities — cart flow, service block layouts, navigation components.',
-      'Participate in structured code review and QA before each release to maintain a stable, visually consistent user experience.',
+      'Work on the customer-facing e-commerce platform used by online and brick-and-mortar retail clients across France; directly responsible for improvements to shopping UI and user flows.',
+      'Collaborate with Product Owners in a French-language environment to translate store-operations and UX requirements into polished front-end implementations.',
+      'Contribute custom HTML/CSS/JS overrides to extend the platform\'s default builder capabilities — nav bar behaviour, cart flow, service block layouts, and filtering components.',
+      'Participate in structured code review and QA before each release, maintaining a stable and visually consistent user experience.',
       'Integrated LiteLLM/AI API features and debugged production PHP/JavaScript issues in a legacy Prototype.js codebase.',
     ],
+    techStack: ['Drupal', 'Twig', 'WordPress', 'PHP', 'Laravel', 'Symfony', 'Yii', 'JavaScript', 'jQuery', 'Vue.js', 'AngularJS', 'HTML', 'Tailwind CSS', 'Bootstrap', 'MySQL', 'Figma', 'REST API', 'Agile / Scrum'],
   },
   {
     company: 'TEKUP JSC',
@@ -39,6 +41,7 @@ export const EXPERIENCES: Experience[] = [
       'Led a small team end-to-end from planning through delivery, coordinating tasks and visual direction.',
       'Practiced version control with GitHub and adapted to new tools under real deadlines.',
     ],
+    techStack: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'jQuery', 'Tailwind CSS', 'Figma'],
   },
 ];
 
@@ -105,7 +108,6 @@ export const PROJECTS: Project[] = [
       'Developed multi-role admin dashboard for users, products, orders, and categories.',
     ],
     tags: ['PHP', 'Laravel', 'ReactJS', 'MySQL', 'jQuery', 'CKEditor'],
-    liveUrl: 'https://glittering-gaufre-335685.netlify.app',
   },
   {
     id: 'food-mart',
@@ -121,7 +123,6 @@ export const PROJECTS: Project[] = [
       'Deployed website, API, and database to production server using Scrum methodology.',
     ],
     tags: ['Java', 'Spring Boot', 'ReactJS', 'MySQL', 'PayOS'],
-    liveUrl: 'https://food-mart-e-commerce.onrender.com',
   },
 ];
 
@@ -172,23 +173,31 @@ export const AWARDS: Award[] = [
 
 export const SKILLS: Skill[] = [
   {
+    category: 'UI / UX & Design',
+    items: ['Mobile-first Design', 'Component-based UI', 'UX Writing', 'Figma', 'Wireframing', 'Call-to-Action Hierarchy', 'Information Architecture'],
+  },
+  {
     category: 'Frontend',
-    items: ['ReactJS', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Bootstrap', 'HTML5', 'CSS3', 'JavaScript (ES6+)', 'jQuery', 'Prototype.js'],
+    items: ['ReactJS', 'Next.js', 'React Native', 'Vue.js', 'AngularJS', 'TypeScript', 'Vite', 'HTML5', 'CSS3', 'JavaScript (ES6+)', 'jQuery', 'Tailwind CSS', 'Bootstrap'],
+  },
+  {
+    category: 'CMS & Site Builders',
+    items: ['Drupal', 'Twig', 'WordPress', 'CKEditor', 'Block-based Architecture', 'Content Types & Taxonomy'],
   },
   {
     category: 'Backend',
-    items: ['PHP (Laravel)', 'Java (Spring Boot)', 'Python (Django / DRF)', 'RESTful APIs', 'JWT Auth'],
+    items: ['PHP (Laravel, Symfony, Yii)', 'Java (Spring Boot)', 'Python (Django / DRF)', 'RESTful APIs', 'Web Services API', 'JWT Auth'],
   },
   {
     category: 'Database & Tools',
-    items: ['MySQL', 'PostgreSQL', 'Git / GitHub / GitLab', 'Docker (basic)', 'Postman', 'DataGrip'],
+    items: ['MySQL', 'PostgreSQL', 'Git / GitHub / GitLab', 'Docker (basic)', 'Postman', 'DataGrip', 'Linux'],
   },
   {
     category: 'AI / Other',
-    items: ['LiteLLM / OpenAI API', 'CNN / Image Processing', 'rPPG Integration', 'CKEditor', 'Figma (basic)'],
+    items: ['LiteLLM / OpenAI API', 'Generative AI Tools', 'CNN / Image Processing', 'rPPG Integration', 'Prototype.js'],
   },
   {
     category: 'Workflow',
-    items: ['Scrum / Agile', 'Trello', 'Jira', 'Code Review', 'CI/CD (basic)'],
+    items: ['Scrum / Agile', 'Trello', 'Jira', 'Code Review', 'CI/CD (basic)', 'ERP / CRM Systems'],
   },
 ];

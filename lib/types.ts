@@ -6,7 +6,6 @@ export interface Project {
   description: string;
   bullets: string[];
   tags: string[];
-  liveUrl?: string;
   role: string;
   highlight?: boolean;
 }
@@ -18,6 +17,7 @@ export interface Experience {
   period: string;
   type: 'full-time' | 'internship';
   bullets: string[];
+  techStack?: string[];
 }
 
 export interface Award {

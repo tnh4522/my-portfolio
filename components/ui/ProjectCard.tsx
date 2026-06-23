@@ -1,7 +1,6 @@
 'use client';
 
 import type { Project } from '@/lib/types';
-import { ExternalLink } from 'lucide-react';
 
 interface ProjectCardProps {
   project: Project;
@@ -56,9 +55,9 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         ))}
       </ul>
 
-      {/* Tags + Live URL */}
+      {/* Tags */}
       <div className="mt-auto">
-        <div className="flex flex-wrap gap-2 mb-4">
+        <div className="flex flex-wrap gap-2">
           {project.tags.map((tag) => (
             <span
               key={tag}
@@ -68,18 +67,6 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             </span>
           ))}
         </div>
-
-        {project.liveUrl && (
-          <a
-            href={project.liveUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-accent-blue text-caption font-medium hover:underline"
-          >
-            <ExternalLink size={14} />
-            Live Demo
-          </a>
-        )}
       </div>
     </div>
   );
