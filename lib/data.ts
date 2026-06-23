@@ -196,11 +196,11 @@ export const SKILLS: Skill[] = [
   },
   {
     category: 'Database & Tools',
-    items: ['MySQL', 'MariaDB', 'MongoDB', 'Git / GitHub / GitLab', 'Docker (basic)', 'Trello'],
+    items: ['MySQL', 'MariaDB', 'MongoDB', 'Git / GitHub / GitLab', 'Docker (basic)', 'Trello', 'Jira'],
   },
   {
     category: 'Workflow',
-    items: ['Scrum / Agile', 'Trello', 'Jira', 'Code Review', 'CI/CD (basic)'],
+    items: ['Scrum / Agile', 'Code Review', 'CI/CD (basic)'],
   },
   {
     category: 'DevOps',
