@@ -3,7 +3,7 @@ import { Project, Experience, Award, Skill } from './types';
 export const PERSONAL = {
   name: 'Trần Ngọc Huy',
   nameEn: 'Tran Ngoc Huy',
-  role: 'Full-Stack Developer',
+  role: 'Junior Full-Stack Developer',
   tagline: 'Building interfaces that work — from Da Nang',
   email: 'tnh2045@gmail.com',
   phone: '0777 408 164',
