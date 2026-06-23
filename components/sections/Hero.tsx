@@ -35,9 +35,6 @@ const floatingCards = [
         <span className="font-display text-lg font-bold text-text-primary">
           Lundi Matin Groupe
         </span>
-        <span className="mt-1 inline-block rounded-full bg-bg-elevated px-3 py-0.5 text-xs text-text-secondary">
-          France 🇫🇷
-        </span>
       </>
     ),
   },
@@ -46,7 +43,7 @@ const floatingCards = [
     delay: 0.8,
     content: (
       <div className="flex flex-wrap gap-2">
-        {['Drupal', 'React', 'PHP', 'Tailwind'].map((tech) => (
+        {PERSONAL.skill.map((tech) => (
           <span
             key={tech}
             className="rounded-md bg-bg-elevated px-2.5 py-1 text-xs font-medium text-text-primary"
@@ -58,15 +55,36 @@ const floatingCards = [
     ),
   },
   {
-    key: 'awards',
+    key: 'languages',
     delay: 1.6,
     content: (
-      <div className="flex items-center gap-2">
-        <span className="text-2xl">🏆</span>
-        <span className="font-display text-lg font-bold text-text-primary">
-          6 Awards Won
-        </span>
-      </div>
+      <>
+        <span className="text-text-secondary text-caption">Languages</span>
+        <div className="flex flex-col gap-1 mt-1">
+          <span className="font-display text-sm font-bold text-text-primary inline-flex items-center gap-1.5">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" className="w-5 h-3.5 rounded-sm">
+              <clipPath id="s"><path d="M0,0 v30 h60 v-30 z"/></clipPath>
+              <clipPath id="t"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath>
+              <g clipPath="url(#s)">
+                <path d="M0,0 v30 h60 v-30 z" fill="#012169"/>
+                <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" strokeWidth="6"/>
+                <path d="M0,0 L60,30 M60,0 L0,30" clipPath="url(#t)" stroke="#C8102E" strokeWidth="4"/>
+                <path d="M30,0 v30 M0,15 h60" stroke="#fff" strokeWidth="10"/>
+                <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" strokeWidth="6"/>
+              </g>
+            </svg>
+            English — TOEIC 610
+          </span>
+          <span className="font-display text-sm font-bold text-text-primary inline-flex items-center gap-1.5">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" className="w-5 h-3.5 rounded-sm">
+              <rect width="1" height="2" x="0" fill="#002395"/>
+              <rect width="1" height="2" x="1" fill="#fff"/>
+              <rect width="1" height="2" x="2" fill="#ED2939"/>
+            </svg>
+            French — B1
+          </span>
+        </div>
+      </>
     ),
   },
 ];
@@ -146,15 +164,6 @@ export default function Hero() {
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] as const }}
             >
               {PERSONAL.role}
-            </motion.p>
-
-            {/* Tagline */}
-            <motion.p
-              className="text-text-secondary text-body max-w-md"
-              variants={skip ? undefined : fadeUp}
-              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] as const }}
-            >
-              {PERSONAL.tagline}
             </motion.p>
 
             {/* CTAs */}

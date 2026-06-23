@@ -207,6 +207,9 @@ export default function ResumeContent() {
                   <p className="text-text-secondary text-sm print:text-gray-700">
                     Software Technology Engineer – PFIEV
                   </p>
+                  <p className="text-text-muted text-caption mt-0.5 print:text-gray-500">
+                    Graduated with Distinction · GPA 8.3/10
+                  </p>
                 </div>
                 <span className="text-text-muted text-caption shrink-0 print:text-gray-500">
                   2020 – 2025

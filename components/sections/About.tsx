@@ -88,7 +88,7 @@ export default function About() {
               <p className="text-text-secondary text-sm">
                 Software Technology Engineer – PFIEV
               </p>
-              <p className="text-text-muted text-caption mt-1">2020 – 2025</p>
+              <p className="text-text-muted text-caption mt-1">2020 – 2025 · Graduated with Distinction · GPA 8.3/10</p>
             </motion.div>
           </div>
 
