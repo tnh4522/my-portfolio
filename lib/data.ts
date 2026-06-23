@@ -3,14 +3,20 @@ import { Project, Experience, Award, Skill } from './types';
 export const PERSONAL = {
   name: 'Trần Ngọc Huy',
   nameEn: 'Tran Ngoc Huy',
-  role: 'Full-stack Developer',
-  tagline: 'Building interfaces that work — from Da Nang to the French cloud.',
+  role: 'Full-Stack Developer',
+  tagline: 'Building interfaces that work — from Da Nang',
   email: 'tnh2045@gmail.com',
   phone: '0777 408 164',
   location: 'Hoa Khanh Bac, Lien Chieu, Da Nang, Vietnam',
   linkedin: 'https://www.linkedin.com/in/tran-huy-183ba1194',
   github: 'https://github.com/',
   website: 'https://huytran-4522.vercel.app',
+  skill: [
+    'ReactJS', 'Next.js', 'Vue.js', 'TypeScript',
+    'Tailwind CSS', 'Bootstrap', 'Figma',
+    'PHP', 'Laravel', 'Drupal', 'WordPress',
+    'Python', 'Django', 'MySQL', 'REST API',
+  ],
   bio: `Web developer with 2+ years of hands-on experience building and shipping customer-facing e-commerce interfaces, currently working full-time on a live retail platform at Lundi Matin Groupe (France). I combine solid frontend skills (HTML5, CSS3, JavaScript, jQuery, ReactJS) with a product-first mindset — thinking from the end user's perspective to remove friction, simplify flows, and write copy that drives action. Comfortable customizing CMS-driven pages beyond what default builders offer, and experienced working iteratively with real content on production websites. I care about clean interfaces, reliable code, and building things that actually get used.`,
 };
 
@@ -28,7 +34,7 @@ export const EXPERIENCES: Experience[] = [
       'Participate in structured code review and QA before each release, maintaining a stable and visually consistent user experience.',
       'Integrated LiteLLM/AI API features and debugged production PHP/JavaScript issues in a legacy Prototype.js codebase.',
     ],
-    techStack: ['Drupal', 'Twig', 'WordPress', 'PHP', 'Laravel', 'Symfony', 'Yii', 'JavaScript', 'jQuery', 'Vue.js', 'AngularJS', 'HTML', 'Tailwind CSS', 'Bootstrap', 'MySQL', 'Figma', 'REST API', 'Agile / Scrum'],
+    techStack: ['Drupal', 'Twig', 'WordPress', 'PHP', 'Laravel', 'Symfony', 'Yii', 'JavaScript', 'jQuery', 'Vue.js', 'AngularJS', 'HTML', 'Tailwind CSS', 'Bootstrap', 'MySQL', 'Figma', 'REST API', 'ERP', 'CRM'],
   },
   {
     company: 'TEKUP JSC',
@@ -174,30 +180,30 @@ export const AWARDS: Award[] = [
 export const SKILLS: Skill[] = [
   {
     category: 'UI / UX & Design',
-    items: ['Mobile-first Design', 'Component-based UI', 'UX Writing', 'Figma', 'Wireframing', 'Call-to-Action Hierarchy', 'Information Architecture'],
+    items: ['Component-based UI', 'Figma'],
   },
   {
     category: 'Frontend',
-    items: ['ReactJS', 'Next.js', 'React Native', 'Vue.js', 'AngularJS', 'TypeScript', 'Vite', 'HTML5', 'CSS3', 'JavaScript (ES6+)', 'jQuery', 'Tailwind CSS', 'Bootstrap'],
+    items: ['ReactJS', 'Next.js', 'Vue.js', 'AngularJS', 'TypeScript', 'Vite', 'HTML5', 'CSS3', 'JavaScript', 'jQuery', 'Tailwind CSS', 'Bootstrap'],
   },
   {
     category: 'CMS & Site Builders',
-    items: ['Drupal', 'Twig', 'WordPress', 'CKEditor', 'Block-based Architecture', 'Content Types & Taxonomy'],
+    items: ['Drupal', 'Twig', 'WordPress', 'CKEditor'],
   },
   {
     category: 'Backend',
-    items: ['PHP (Laravel, Symfony, Yii)', 'Java (Spring Boot)', 'Python (Django / DRF)', 'RESTful APIs', 'Web Services API', 'JWT Auth'],
+    items: ['PHP (Laravel, Symfony, Yii)', 'Java (Spring Boot)', 'Python (Django / DRF)', 'NodeJS (ExpressJS)', '.NET (ASP.NET)', 'RESTful APIs', 'Web Services API', 'JWT Auth'],
   },
   {
     category: 'Database & Tools',
-    items: ['MySQL', 'PostgreSQL', 'Git / GitHub / GitLab', 'Docker (basic)', 'Postman', 'DataGrip', 'Linux'],
-  },
-  {
-    category: 'AI / Other',
-    items: ['LiteLLM / OpenAI API', 'Generative AI Tools', 'CNN / Image Processing', 'rPPG Integration', 'Prototype.js'],
+    items: ['MySQL', 'MariaDB', 'MongoDB', 'Git / GitHub / GitLab', 'Docker (basic)', 'Trello'],
   },
   {
     category: 'Workflow',
-    items: ['Scrum / Agile', 'Trello', 'Jira', 'Code Review', 'CI/CD (basic)', 'ERP / CRM Systems'],
+    items: ['Scrum / Agile', 'Trello', 'Jira', 'Code Review', 'CI/CD (basic)'],
+  },
+  {
+    category: 'DevOps',
+    items: ['Linux'],
   },
 ];
