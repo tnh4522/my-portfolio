@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowLeft, Printer, Mail, MapPin, Phone, ExternalLink } from 'lucide-react';
+import { ArrowLeft, Printer, Mail, MapPin, Phone, Globe } from 'lucide-react';
 import { PERSONAL, EXPERIENCES, PROJECTS, AWARDS, SKILLS } from '@/lib/data';
 
 function LinkedinIcon({ className }: { className?: string }) {
@@ -120,6 +120,16 @@ export default function ResumeContent() {
                   >
                     <GithubIcon className="w-3 h-3" /> GitHub
                   </a>
+                  {PERSONAL.website && (
+                    <a
+                      href={PERSONAL.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-text-secondary hover:text-accent-blue transition-colors print:text-gray-600"
+                    >
+                      <Globe className="w-3 h-3" /> Portfolio
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
@@ -167,6 +177,18 @@ export default function ResumeContent() {
                         </li>
                       ))}
                     </ul>
+                    {exp.techStack && exp.techStack.length > 0 && (
+                      <div className="flex flex-wrap gap-1.5 mt-3">
+                        {exp.techStack.map((tech) => (
+                          <span
+                            key={tech}
+                            className="px-2 py-0.5 rounded-md bg-bg-elevated text-text-secondary text-xs font-mono print:bg-gray-100 print:text-gray-700"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
@@ -208,16 +230,6 @@ export default function ResumeContent() {
                         <span className="text-text-muted text-caption ml-2 print:text-gray-500">
                           — {project.role}
                         </span>
-                        {project.liveUrl && (
-                          <a
-                            href={project.liveUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-0.5 ml-2 text-accent-blue text-xs hover:underline print:text-blue-600"
-                          >
-                            <ExternalLink size={10} /> Live
-                          </a>
-                        )}
                       </div>
                       <span className="text-text-muted text-caption shrink-0 print:text-gray-500">
                         {project.period}

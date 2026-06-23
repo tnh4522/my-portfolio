@@ -33,6 +33,7 @@ export default function Experience() {
               period={exp.period}
               type={exp.type}
               bullets={exp.bullets}
+              techStack={exp.techStack}
               isActive={index === 0}
             />
           ))}
