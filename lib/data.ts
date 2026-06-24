@@ -1,4 +1,4 @@
-import { Project, Experience, Award, Skill } from './types';
+import { Project, Experience, Award, Skill, DrupalProject } from './types';
 
 export const PERSONAL = {
   name: 'Trần Ngọc Huy',
@@ -205,5 +205,72 @@ export const SKILLS: Skill[] = [
   {
     category: 'DevOps',
     items: ['Linux'],
+  },
+];
+
+export const DRUPAL_PROJECTS: DrupalProject[] = [
+  {
+    id: '2m-distribution',
+    title: '2M Distribution (La Boutique Électrique)',
+    description: 'E-commerce platform for professional electrical equipment — featuring product catalogs with advanced filtering, promotional banners, PayPal integration, and customer reviews.',
+    image: '/images/drupal/2m-distribution.png',
+    category: 'E-commerce',
+    tags: ['Drupal', 'E-commerce', 'Twig', 'PHP'],
+  },
+  {
+    id: 'cuoq-forest',
+    title: 'Cuoq Forest Diffusion',
+    description: 'Corporate website and online store for forestry equipment — showcasing heavy machinery brands with product categories, multilingual support, and media galleries.',
+    image: '/images/drupal/cuoq-forest.png',
+    category: 'Industrial',
+    tags: ['Drupal', 'Corporate', 'Twig', 'PHP'],
+  },
+  {
+    id: 'cyberpieces',
+    title: 'Cyberpièces Électroménager',
+    description: 'Spare parts marketplace for household appliances — built with category-driven navigation, live chat support, service blocks, and customer review integration (9.6/10 rating).',
+    image: '/images/drupal/cyberpieces.png',
+    category: 'E-commerce',
+    tags: ['Drupal', 'E-commerce', 'Twig', 'PHP'],
+  },
+  {
+    id: 'equishop',
+    title: 'Sellerie Equishop',
+    description: 'Online equestrian boutique for horse and rider gear — featuring hero sliders, category-driven product showcase, promotions section, and customer review widgets.',
+    image: '/images/drupal/equishop.png',
+    category: 'E-commerce',
+    tags: ['Drupal', 'E-commerce', 'Twig', 'PHP'],
+  },
+  {
+    id: 'goood-petfood',
+    title: 'Goood Petfood',
+    description: 'Premium pet food e-commerce — clean product presentation with lifestyle imagery, delivery promotions, and product range categorization (croquettes, pâtées, treats).',
+    image: '/images/drupal/goood-petfood.png',
+    category: 'E-commerce',
+    tags: ['Drupal', 'E-commerce', 'Twig', 'PHP'],
+  },
+  {
+    id: 'happydogboutique',
+    title: 'Happy Dog & Happy Cat Boutique',
+    description: 'Official online store for Happy Dog & Happy Cat brands — featuring product carousels, hero banners, contact integration, and a polished brand identity.',
+    image: '/images/drupal/happydogboutique.png',
+    category: 'E-commerce',
+    tags: ['Drupal', 'E-commerce', 'Twig', 'PHP'],
+  },
+  {
+    id: 'idfmateriaux',
+    title: 'ID France Matériaux',
+    description: 'Building materials supplier platform for professionals and individuals — with product categories by trade, secure payment badges, and promotional blocks.',
+    image: '/images/drupal/idfmateriaux.png',
+    category: 'E-commerce',
+    tags: ['Drupal', 'E-commerce', 'Twig', 'PHP'],
+  },
+  {
+    id: 'webmedical',
+    title: 'Webmedical',
+    description: 'Specialized e-commerce for ambulance staff uniforms and medical equipment — featuring branded clothing, product filters, and a service-oriented layout.',
+    image: '/images/drupal/webmedical.png',
+    category: 'E-commerce',
+    tags: ['Drupal', 'E-commerce', 'Twig', 'PHP'],
   },
 ];
