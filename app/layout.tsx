@@ -25,22 +25,22 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Tran Ngoc Huy — Web Designer & Frontend Developer",
+  title: "Tran Ngoc Huy — Junior Full-Stack Developer",
   description:
-    "Portfolio of Tran Ngoc Huy — Web Designer & Frontend Developer at Lundi Matin Groupe (France). Building interfaces that work, from Da Nang to the French cloud.",
+    "Portfolio of Tran Ngoc Huy — Junior Full-Stack Developer at Lundi Matin Groupe (France). Building interfaces that work, from Da Nang to the French cloud.",
   openGraph: {
-    title: "Tran Ngoc Huy — Web Designer & Frontend Developer",
+    title: "Tran Ngoc Huy — Junior Full-Stack Developer",
     description:
-      "Portfolio of Tran Ngoc Huy — Web Designer & Frontend Developer at Lundi Matin Groupe (France). Building interfaces that work, from Da Nang to the French cloud.",
+      "Portfolio of Tran Ngoc Huy — Junior Full-Stack Developer at Lundi Matin Groupe (France). Building interfaces that work, from Da Nang to the French cloud.",
     type: "website",
     locale: "en_US",
     images: [{ url: "/og.png", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tran Ngoc Huy — Web Designer & Frontend Developer",
+    title: "Tran Ngoc Huy — Junior Full-Stack Developer",
     description:
-      "Portfolio of Tran Ngoc Huy — Web Designer & Frontend Developer at Lundi Matin Groupe (France).",
+      "Portfolio of Tran Ngoc Huy — Junior Full-Stack Developer at Lundi Matin Groupe (France).",
   },
   metadataBase: new URL("https://tranngochy.dev"),
   icons: { icon: "/favicon.ico" },
