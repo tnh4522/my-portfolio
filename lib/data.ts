@@ -9,13 +9,14 @@ export const PERSONAL = {
   phone: '0777 408 164',
   location: 'Hoa Khanh Bac, Lien Chieu, Da Nang, Vietnam',
   linkedin: 'https://www.linkedin.com/in/tran-huy-183ba1194',
-  github: 'https://github.com/',
+  github: 'https://github.com/tnh4522',
   website: 'https://huytran-4522.vercel.app',
   skill: [
     'ReactJS', 'Next.js', 'Vue.js', 'TypeScript',
     'Tailwind CSS', 'Bootstrap', 'Figma',
     'PHP', 'Laravel', 'Drupal', 'WordPress',
     'Python', 'Django', 'MySQL', 'REST API',
+    'NodeJS', 'ASP.NET', 'Java'
   ],
   bio: `Web developer with 2+ years of hands-on experience building and shipping customer-facing e-commerce interfaces, currently working full-time on a live retail platform at Lundi Matin Groupe (France). I combine solid frontend skills (HTML5, CSS3, JavaScript, jQuery, ReactJS) with a product-first mindset — thinking from the end user's perspective to remove friction, simplify flows, and write copy that drives action. Comfortable customizing CMS-driven pages beyond what default builders offer, and experienced working iteratively with real content on production websites. I care about clean interfaces, reliable code, and building things that actually get used.`,
 };
@@ -37,15 +38,15 @@ export const EXPERIENCES: Experience[] = [
     techStack: ['Drupal', 'Twig', 'WordPress', 'PHP', 'Laravel', 'Symfony', 'Yii', 'JavaScript', 'jQuery', 'Vue.js', 'AngularJS', 'HTML', 'Tailwind CSS', 'Bootstrap', 'MySQL', 'Figma', 'REST API', 'ERP', 'CRM'],
   },
   {
-    company: 'TEKUP JSC',
+    company: 'Tekup JSC',
     location: 'Da Nang, Vietnam',
     role: 'Web Front-End Developer Intern',
     period: 'May – Jul 2023',
     type: 'internship',
     bullets: [
-      'Designed and built static, customer-facing websites using HTML, CSS, and JavaScript.',
+      'Built responsive customer-facing websites using HTML, CSS, JavaScript, jQuery, Tailwind CSS, and Bootstrap.',
       'Led a small team end-to-end from planning through delivery, coordinating tasks and visual direction.',
-      'Practiced version control with GitHub and adapted to new tools under real deadlines.',
+      'Adapted quickly to new frontend tools and frameworks under real production deadlines.',
     ],
     techStack: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'jQuery', 'Tailwind CSS', 'Figma'],
   },
@@ -77,11 +78,11 @@ export const PROJECTS: Project[] = [
     description:
       'A modern admin dashboard for managing products, orders, and customer data at a fashion boutique — built with ReactJS + Vite frontend and Django REST API backend.',
     bullets: [
-      'Designed a clean admin dashboard with role-based UI for admin vs. staff views, responsive layout, and clear visual hierarchy.',
-      'Built filterable product catalog, revenue analytics charts, and inline edit forms.',
-      'Implemented JWT authentication, MySQL database, and REST API with sub-500ms response times.',
+      'Built a responsive admin dashboard for managing products, orders, customers, and staff roles.',
+      'Developed filterable product listings, status badges, image management, and inline edit forms.',
+      'Implemented revenue analytics views with charts and timeline summaries.',
     ],
-    tags: ['ReactJS', 'Django REST', 'MySQL', 'Tailwind CSS', 'JWT'],
+    tags: ['ReactJS', 'Vite', 'Django REST', 'MySQL', 'Tailwind CSS', 'JWT'],
     highlight: true,
   },
   {
@@ -93,9 +94,9 @@ export const PROJECTS: Project[] = [
     description:
       'A mobile-first health app that measures vital signs (heart rate, SpO2, blood pressure) via facial video using rPPG technology, with integrated telemedicine features.',
     bullets: [
-      'Designed patient-facing screens: guided measurement flow, health history dashboard, and PDF health report export.',
-      'Built telemedicine feature: appointment scheduling UI and video-call integration for remote doctor consultations.',
-      'Applied Scrum/Agile with Jira/Trello across a 4-person team.',
+      'Contributed to UI design and frontend implementation of a mobile-first health monitoring app.',
+      'Designed patient-facing screens including measurement flow, results, history dashboard, and PDF report export.',
+      'Worked on appointment scheduling UI and video-call integration flow.',
     ],
     tags: ['React Native', 'rPPG / AI', 'Healthcare UX', 'REST API', 'Scrum'],
     highlight: true,
@@ -113,7 +114,7 @@ export const PROJECTS: Project[] = [
       'Integrated CKEditor-powered blog with ratings and comments.',
       'Developed multi-role admin dashboard for users, products, orders, and categories.',
     ],
-    tags: ['PHP', 'Laravel', 'ReactJS', 'MySQL', 'jQuery', 'CKEditor'],
+    tags: ['PHP', 'Laravel', 'ReactJS', 'MySQL', 'jQuery', 'CKEditor', 'Netlify'],
   },
   {
     id: 'food-mart',
@@ -128,7 +129,7 @@ export const PROJECTS: Project[] = [
       'Built seller-side product management: clean forms, status indicators, order tracking.',
       'Deployed website, API, and database to production server using Scrum methodology.',
     ],
-    tags: ['Java', 'Spring Boot', 'ReactJS', 'MySQL', 'PayOS'],
+    tags: ['Java', 'Spring Boot', 'ReactJS', 'Vite', 'MySQL', 'PayOS', 'Render'],
   },
 ];
 
@@ -180,7 +181,7 @@ export const AWARDS: Award[] = [
 export const SKILLS: Skill[] = [
   {
     category: 'UI / UX & Design',
-    items: ['Component-based UI', 'Figma'],
+    items: ['Component-based UI', 'Figma', 'UX Design', 'User Flows'],
   },
   {
     category: 'Frontend',
@@ -196,11 +197,15 @@ export const SKILLS: Skill[] = [
   },
   {
     category: 'Database & Tools',
-    items: ['MySQL', 'MariaDB', 'MongoDB', 'Git / GitHub / GitLab', 'Docker (basic)', 'Trello', 'Jira'],
+    items: ['MySQL', 'MariaDB', 'MongoDB', 'Git / GitHub / GitLab', 'Docker', 'Trello', 'Jira'],
   },
   {
     category: 'Workflow',
-    items: ['Scrum / Agile', 'Code Review', 'CI/CD (basic)'],
+    items: ['Agile', 'Scrum', 'Code Review', 'CI/CD'],
+  },
+  {
+    category: 'Soft Skills',
+    items: ['Product mindset', 'User-centered thinking', 'Attention to visual detail', 'Teamwork', 'Small-team leadership', 'Self-directed learning', 'Time management', 'Delivery focus'],
   },
   {
     category: 'DevOps',
