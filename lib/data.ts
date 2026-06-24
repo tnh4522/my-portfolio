@@ -185,11 +185,11 @@ export const SKILLS: Skill[] = [
   },
   {
     category: 'Frontend',
-    items: ['ReactJS', 'Next.js', 'Vue.js', 'AngularJS', 'TypeScript', 'Vite', 'HTML5', 'CSS3', 'JavaScript', 'jQuery', 'Tailwind CSS', 'Bootstrap'],
+    items: ['ReactJS', 'Next.js', 'Vue.js', 'AngularJS', 'TypeScript', 'Vite', 'HTML5', 'CSS3', 'JavaScript', 'jQuery', 'Tailwind CSS', 'Bootstrap', 'Twig'],
   },
   {
     category: 'CMS & Site Builders',
-    items: ['Drupal', 'Twig', 'WordPress', 'CKEditor'],
+    items: ['Drupal', 'WordPress'],
   },
   {
     category: 'Backend',
@@ -202,10 +202,6 @@ export const SKILLS: Skill[] = [
   {
     category: 'Workflow',
     items: ['Agile', 'Scrum', 'Code Review', 'CI/CD'],
-  },
-  {
-    category: 'Soft Skills',
-    items: ['Product mindset', 'User-centered thinking', 'Attention to visual detail', 'Teamwork', 'Small-team leadership', 'Self-directed learning', 'Time management', 'Delivery focus'],
   },
   {
     category: 'DevOps',

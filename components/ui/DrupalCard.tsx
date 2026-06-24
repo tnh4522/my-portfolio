@@ -6,14 +6,15 @@ import type { DrupalProject } from '@/lib/types';
 
 interface DrupalCardProps {
   project: DrupalProject;
+  onClick?: () => void;
 }
 
-export default function DrupalCard({ project }: DrupalCardProps) {
+export default function DrupalCard({ project, onClick }: DrupalCardProps) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <div
-      className="group relative bg-bg-surface rounded-xl overflow-hidden border transition-all duration-500 hover:-translate-y-2"
+      className="group relative bg-bg-surface rounded-xl overflow-hidden border transition-all duration-500 hover:-translate-y-2 cursor-pointer"
       style={{
         borderColor: isHovered ? 'var(--accent-primary)' : 'var(--border)',
         boxShadow: isHovered
@@ -22,6 +23,7 @@ export default function DrupalCard({ project }: DrupalCardProps) {
       }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onClick={onClick}
     >
       {/* Image Container */}
       <div className="relative w-full overflow-hidden" style={{ aspectRatio: '16/10' }}>
