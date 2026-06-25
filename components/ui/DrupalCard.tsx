@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import type { DrupalProject } from '@/lib/types';
+import SkillBadge from './SkillBadge';
 
 interface DrupalCardProps {
   project: DrupalProject;
@@ -83,12 +84,11 @@ export default function DrupalCard({ project, onClick }: DrupalCardProps) {
         {/* Tags */}
         <div className="flex flex-wrap gap-1.5">
           {project.tags.map((tag) => (
-            <span
+            <SkillBadge
               key={tag}
-              className="px-2 py-0.5 rounded-md bg-bg-elevated text-text-muted text-xs font-mono transition-colors duration-300 group-hover:text-text-secondary"
-            >
-              {tag}
-            </span>
+              name={tag}
+              compact
+            />
           ))}
         </div>
       </div>

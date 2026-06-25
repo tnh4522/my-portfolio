@@ -58,6 +58,12 @@ export default function RootLayout({
       data-scroll-behavior="smooth"
       suppressHydrationWarning
     >
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+        />
+      </head>
       <body className="min-h-screen bg-bg-base text-text-primary font-body antialiased">
         <ThemeProvider>{children}</ThemeProvider>
       </body>

@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion } from 'framer-motion';
 import Image from 'next/image';
+import SkillBadge from './SkillBadge';
 
 interface TimelineItemProps {
   company: string;
@@ -115,12 +116,11 @@ export default function TimelineItem({
         {techStack && techStack.length > 0 && (
           <div className="flex flex-wrap gap-1.5 mt-4">
             {techStack.map((tech) => (
-              <span
+              <SkillBadge
                 key={tech}
-                className="rounded-md bg-bg-elevated px-2 py-0.5 text-xs font-mono text-text-secondary"
-              >
-                {tech}
-              </span>
+                name={tech}
+                compact
+              />
             ))}
           </div>
         )}

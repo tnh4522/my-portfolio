@@ -1,6 +1,7 @@
 'use client';
 
 import type { Project } from '@/lib/types';
+import SkillBadge from './SkillBadge';
 
 interface ProjectCardProps {
   project: Project;
@@ -59,12 +60,11 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       <div className="mt-auto">
         <div className="flex flex-wrap gap-2">
           {project.tags.map((tag) => (
-            <span
+            <SkillBadge
               key={tag}
-              className="px-2.5 py-1 rounded-full bg-bg-elevated text-text-secondary text-xs font-mono"
-            >
-              {tag}
-            </span>
+              name={tag}
+              compact
+            />
           ))}
         </div>
       </div>

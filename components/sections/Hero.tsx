@@ -4,6 +4,7 @@ import { motion, useReducedMotion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import { PERSONAL } from '@/lib/data';
+import SkillBadge from '@/components/ui/SkillBadge';
 
 /* ── animation presets ── */
 const fadeUp = {
@@ -58,12 +59,11 @@ const floatingCards = [
     content: (
       <div className="flex flex-wrap gap-2">
         {PERSONAL.skill.map((tech) => (
-          <span
+          <SkillBadge
             key={tech}
-            className="rounded-md bg-bg-elevated px-2.5 py-1 text-xs font-medium text-text-primary"
-          >
-            {tech}
-          </span>
+            name={tech}
+            compact
+          />
         ))}
       </div>
     ),
