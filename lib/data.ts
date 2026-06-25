@@ -28,6 +28,7 @@ export const EXPERIENCES: Experience[] = [
     role: 'Full-stack Developer',
     period: '2024 – Present',
     type: 'full-time',
+    logo: '/images/lundi-matin-logo.svg',
     bullets: [
       'Work on the customer-facing e-commerce platform used by online and brick-and-mortar retail clients across France; directly responsible for improvements to shopping UI and user flows.',
       'Collaborate with Product Owners in a French-language environment to translate store-operations and UX requirements into polished front-end implementations.',
@@ -43,6 +44,7 @@ export const EXPERIENCES: Experience[] = [
     role: 'Web Front-End Developer Intern',
     period: 'May – Jul 2023',
     type: 'internship',
+    logo: '/images/logo-tekup.png',
     bullets: [
       'Built responsive customer-facing websites using HTML, CSS, JavaScript, jQuery, Tailwind CSS, and Bootstrap.',
       'Led a small team end-to-end from planning through delivery, coordinating tasks and visual direction.',

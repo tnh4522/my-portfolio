@@ -18,6 +18,7 @@ export interface Experience {
   type: 'full-time' | 'internship';
   bullets: string[];
   techStack?: string[];
+  logo?: string;
 }
 
 export interface Award {

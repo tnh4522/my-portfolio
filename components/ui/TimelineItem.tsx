@@ -1,6 +1,7 @@
 'use client';
 
 import { motion, useReducedMotion } from 'framer-motion';
+import Image from 'next/image';
 
 interface TimelineItemProps {
   company: string;
@@ -11,6 +12,7 @@ interface TimelineItemProps {
   bullets: string[];
   techStack?: string[];
   isActive?: boolean;
+  logo?: string;
 }
 
 const fadeUp = {
@@ -28,6 +30,7 @@ export default function TimelineItem({
   bullets,
   techStack,
   isActive = false,
+  logo,
 }: TimelineItemProps) {
   const prefersReducedMotion = useReducedMotion();
 
@@ -56,10 +59,26 @@ export default function TimelineItem({
 
       {/* Content */}
       <div>
-        {/* Company */}
-        <h3 className="font-display text-h2 text-text-primary font-bold leading-tight">
-          {company}
-        </h3>
+        {/* Company + Logo */}
+        <div className="flex items-center gap-3">
+          <h3 className="font-display text-h2 text-text-primary font-bold leading-tight">
+            {company}
+          </h3>
+          {logo && (
+            <div
+              className="inline-flex items-center justify-center rounded-lg px-2 py-1 shrink-0 bg-white"
+              style={{ border: '1px solid var(--border)' }}
+            >
+              <Image
+                src={logo}
+                alt={`${company} logo`}
+                width={90}
+                height={28}
+                className="object-contain h-7 w-auto"
+              />
+            </div>
+          )}
+        </div>
 
         {/* Role */}
         <p className="text-accent-blue font-medium mt-1">{role}</p>

@@ -30,12 +30,26 @@ const floatingCards = [
     key: 'location',
     delay: 0,
     content: (
-      <>
-        <span className="text-text-secondary text-caption">Currently at</span>
-        <span className="font-display text-lg font-bold text-text-primary">
-          Lundi Matin Groupe
-        </span>
-      </>
+      <div className="flex items-center justify-between gap-3">
+        <div className="flex flex-col gap-1">
+          <span className="text-text-secondary text-caption">Currently at</span>
+          <span className="font-display text-base font-bold text-text-primary leading-tight">
+            Lundi Matin Groupe
+          </span>
+        </div>
+        <div
+          className="inline-flex items-center justify-center rounded-lg px-2 py-1 shrink-0 bg-white"
+          style={{ border: '1px solid var(--border)' }}
+        >
+          <Image
+            src="/images/lundi-matin-logo.svg"
+            alt="Lundi Matin Groupe logo"
+            width={65}
+            height={25}
+            className="object-contain h-5 w-auto"
+          />
+        </div>
+      </div>
     ),
   },
   {
@@ -198,7 +212,7 @@ export default function Hero() {
             {floatingCards.map((card) => (
               <motion.div
                 key={card.key}
-                className="flex flex-col gap-1 rounded-xl bg-bg-surface p-5 w-full md:max-w-[280px] animate-float"
+                className="flex flex-col gap-1 rounded-xl bg-bg-surface p-5 w-full md:max-w-[300px] animate-float"
                 style={{
                   border: '1px solid var(--border)',
                   animationDelay: `${card.delay}s`,

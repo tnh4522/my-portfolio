@@ -34,6 +34,7 @@ export default function Experience() {
               type={exp.type}
               bullets={exp.bullets}
               techStack={exp.techStack}
+              logo={exp.logo}
               isActive={index === 0}
             />
           ))}
