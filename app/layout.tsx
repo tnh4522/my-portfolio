@@ -43,7 +43,7 @@ export const metadata: Metadata = {
       "Portfolio of Tran Ngoc Huy — Junior Full-Stack Developer at Lundi Matin Groupe (France).",
   },
   metadataBase: new URL("https://tranngochy.dev"),
-  icons: { icon: "/favicon.ico" },
+  icons: { icon: "/favicon.svg" },
 };
 
 export default function RootLayout({
