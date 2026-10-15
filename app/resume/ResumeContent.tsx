@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowLeft, Printer, Mail, MapPin, Phone, Globe } from 'lucide-react';
+import { ArrowLeft, Printer, Download, Mail, MapPin, Phone, Globe } from 'lucide-react';
 import { PERSONAL, EXPERIENCES, PROJECTS, AWARDS, SKILLS } from '@/lib/data';
 
 function LinkedinIcon({ className }: { className?: string }) {
@@ -44,7 +44,12 @@ function GithubIcon({ className }: { className?: string }) {
 
 export default function ResumeContent() {
   const handlePrint = () => {
+    const originalTitle = document.title;
+    document.title = 'Tran-Ngoc-Huy-CV';
     window.print();
+    setTimeout(() => {
+      document.title = originalTitle;
+    }, 1000);
   };
 
   return (
@@ -54,253 +59,297 @@ export default function ResumeContent() {
         <div className="container-inner flex items-center justify-between h-14">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-sm text-text-secondary hover:text-text-primary transition-colors"
+            className="inline-flex items-center gap-2 text-sm text-text-secondary hover:text-text-primary transition-colors shrink-0"
           >
             <ArrowLeft size={16} />
-            Back to Portfolio
+            <span className="hidden sm:inline">Back to Portfolio</span>
+            <span className="sm:hidden text-xs">Back</span>
           </Link>
-          <button
-            onClick={handlePrint}
-            className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-accent-blue border border-accent-blue/40 rounded-lg hover:bg-accent-blue/10 transition-colors cursor-pointer"
-          >
-            <Printer size={16} />
-            Print / Save PDF
-          </button>
+          <div className="flex items-center gap-2 sm:gap-3">
+            <a
+              href="/Tran-Ngoc-Huy-CV.pdf"
+              download="Tran-Ngoc-Huy-CV.pdf"
+              className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3.5 py-1.5 text-xs sm:text-sm font-medium text-white bg-accent-blue rounded-lg hover:bg-accent-blue/90 transition-colors shadow-xs shrink-0"
+            >
+              <Download size={14} />
+              <span>Download PDF</span>
+            </a>
+            <button
+              onClick={handlePrint}
+              className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3.5 py-1.5 text-xs sm:text-sm font-medium text-accent-blue border border-accent-blue/40 rounded-lg hover:bg-accent-blue/10 transition-colors cursor-pointer shrink-0"
+            >
+              <Printer size={14} />
+              <span className="hidden sm:inline">Print / Save PDF</span>
+              <span className="sm:hidden">Print</span>
+            </button>
+          </div>
         </div>
       </div>
 
       {/* ── Resume content ── */}
-      <div className="container-inner py-12 print:py-0 print:max-w-none">
-        <div className="max-w-[800px] mx-auto bg-bg-surface rounded-2xl print:rounded-none print:bg-white print:text-black border print:border-none overflow-hidden" style={{ borderColor: 'var(--border)' }}>
+      <div className="container-inner py-12 print:py-0 print:px-0 print:max-w-none print:m-0">
+        <div className="cv-sheet max-w-[800px] mx-auto bg-bg-surface rounded-2xl print:rounded-none print:bg-white print:text-black border print:border-none print:shadow-none print:overflow-visible print:max-w-none print:w-full print:m-0 overflow-hidden" style={{ borderColor: 'var(--border)' }}>
           
-          {/* ── Header ── */}
-          <div className="p-8 pb-6 border-b print:border-gray-200" style={{ borderColor: 'var(--border)' }}>
-            <div className="flex items-start gap-6">
-              <div className="w-20 h-20 rounded-xl overflow-hidden shrink-0 ring-2 ring-accent-blue/30 ring-offset-2 ring-offset-bg-surface print:ring-0 print:ring-offset-0">
-                <Image
-                  src="/images/avatar.jpg"
-                  alt={`Photo of ${PERSONAL.name}`}
-                  width={80}
-                  height={80}
-                  className="object-cover w-full h-full"
-                />
-              </div>
-              <div className="flex-1 min-w-0">
-                <h1 className="font-display text-2xl font-bold text-text-primary print:text-black mb-1">
-                  {PERSONAL.name}
-                </h1>
-                <p className="text-accent-blue font-medium text-lg print:text-blue-600">
-                  {PERSONAL.role}
-                </p>
-                <div className="flex flex-wrap gap-x-4 gap-y-1 mt-3 text-text-secondary text-caption print:text-gray-600">
-                  <span className="inline-flex items-center gap-1">
-                    <Mail size={12} /> {PERSONAL.email}
-                  </span>
-                  <span className="inline-flex items-center gap-1">
-                    <Phone size={12} /> {PERSONAL.phone}
-                  </span>
-                  <span className="inline-flex items-center gap-1">
-                    <MapPin size={12} /> Da Nang, Vietnam
-                  </span>
+          {/* ════════ PAGE 1 ════════ */}
+          <div className="cv-page p-8 pb-4 print:p-0">
+            {/* Header */}
+            <div className="pb-6 print:pb-3 border-b print:border-gray-300 print:mb-3" style={{ borderColor: 'var(--border)' }}>
+              <div className="flex items-start gap-6 print:gap-4">
+                <div className="w-24 h-24 print:w-24 print:h-24 rounded-xl overflow-hidden shrink-0 ring-2 ring-accent-blue/30 ring-offset-2 ring-offset-bg-surface print:ring-0 print:ring-offset-0">
+                  <Image
+                    src="/images/avatar.jpg"
+                    alt={`Photo of ${PERSONAL.name}`}
+                    width={120}
+                    height={120}
+                    className="object-cover w-full h-full"
+                    priority
+                  />
                 </div>
-                <div className="flex gap-4 mt-2 text-caption">
-                  <a
-                    href={PERSONAL.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-text-secondary hover:text-accent-blue transition-colors print:text-gray-600"
-                  >
-                    <LinkedinIcon className="w-3 h-3" /> LinkedIn
-                  </a>
-                  <a
-                    href={PERSONAL.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-text-secondary hover:text-accent-blue transition-colors print:text-gray-600"
-                  >
-                    <GithubIcon className="w-3 h-3" /> GitHub
-                  </a>
-                  {PERSONAL.website && (
+                <div className="flex-1 min-w-0">
+                  <h1 className="font-display text-2xl print:text-[22px] font-bold text-text-primary print:text-black mb-0.5">
+                    {PERSONAL.name}
+                  </h1>
+                  <p className="text-accent-blue font-medium text-lg print:text-[14px] print:text-blue-600">
+                    {PERSONAL.role}
+                  </p>
+                  <div className="flex flex-wrap gap-x-4 gap-y-1 mt-2.5 print:mt-1.5 text-text-secondary text-caption print:text-[11.5px] print:text-gray-600">
                     <a
-                      href={PERSONAL.website}
+                      href={`mailto:${PERSONAL.email}`}
+                      className="inline-flex items-center gap-1 hover:text-accent-blue transition-colors print:text-gray-600"
+                    >
+                      <Mail size={12} /> {PERSONAL.email}
+                    </a>
+                    <a
+                      href={`tel:${PERSONAL.phone.replace(/\s+/g, '')}`}
+                      className="inline-flex items-center gap-1 hover:text-accent-blue transition-colors print:text-gray-600"
+                    >
+                      <Phone size={12} /> {PERSONAL.phone}
+                    </a>
+                    <span className="inline-flex items-center gap-1">
+                      <MapPin size={12} /> Da Nang, Vietnam
+                    </span>
+                  </div>
+                  <div className="flex gap-4 mt-2 print:mt-1.5 text-caption print:text-[11.5px]">
+                    <a
+                      href={PERSONAL.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1 text-text-secondary hover:text-accent-blue transition-colors print:text-gray-600"
                     >
-                      <Globe className="w-3 h-3" /> Portfolio
+                      <LinkedinIcon className="w-3 h-3" /> LinkedIn
                     </a>
-                  )}
+                    <a
+                      href={PERSONAL.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-text-secondary hover:text-accent-blue transition-colors print:text-gray-600"
+                    >
+                      <GithubIcon className="w-3 h-3" /> GitHub
+                    </a>
+                    {PERSONAL.website && (
+                      <a
+                        href={PERSONAL.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 text-text-secondary hover:text-accent-blue transition-colors print:text-gray-600"
+                      >
+                        <Globe className="w-3 h-3" /> Portfolio
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
+
+            {/* Page 1 Body */}
+            <div className="space-y-8 print:space-y-3.5">
+              {/* Summary */}
+              <section className="cv-avoid-break">
+                <h2 className="font-display font-bold text-base print:text-[13px] text-text-primary print:text-black mb-3 print:mb-1.5 uppercase tracking-wider border-b pb-2 print:pb-1 print:border-gray-300 cv-heading" style={{ borderColor: 'var(--border)' }}>
+                  Summary
+                </h2>
+                <p className="text-text-secondary text-sm print:text-[12px] leading-relaxed print:leading-[1.48] print:text-gray-700">
+                  {PERSONAL.bio}
+                </p>
+              </section>
+
+              {/* Experience */}
+              <section className="cv-avoid-break">
+                <h2 className="font-display font-bold text-base print:text-[13px] text-text-primary print:text-black mb-4 print:mb-1.5 uppercase tracking-wider border-b pb-2 print:pb-1 print:border-gray-300 cv-heading" style={{ borderColor: 'var(--border)' }}>
+                  Experience
+                </h2>
+                <div className="space-y-6 print:space-y-3">
+                  {EXPERIENCES.map((exp) => (
+                    <div key={`${exp.company}-${exp.period}`} className="cv-avoid-break">
+                      <div className="flex items-start justify-between gap-4 mb-1 print:mb-0.5">
+                        <div>
+                          <h3 className="font-display font-bold text-text-primary print:text-black text-sm print:text-[12.5px]">
+                            {exp.role}
+                          </h3>
+                          <p className="text-accent-blue text-sm print:text-[12px] font-medium print:text-blue-600">
+                            {exp.company} · {exp.location}
+                          </p>
+                        </div>
+                        <span className="text-text-muted text-caption print:text-[11px] shrink-0 print:text-gray-500">
+                          {exp.period}
+                        </span>
+                      </div>
+                      <ul className="mt-2 print:mt-1 space-y-1 print:space-y-0.5">
+                        {exp.bullets.map((bullet, i) => (
+                          <li key={i} className="text-text-secondary text-sm print:text-[12px] print:leading-[1.4] flex gap-2 print:text-gray-700">
+                            <span className="text-accent-blue mt-0.5 shrink-0 print:text-blue-600">•</span>
+                            <span>{bullet}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      {exp.techStack && exp.techStack.length > 0 && (
+                        <div className="flex flex-wrap gap-1.5 print:gap-1 mt-3 print:mt-1.5">
+                          {exp.techStack.map((tech) => (
+                            <span
+                              key={tech}
+                              className="px-2 py-0.5 print:px-1.5 print:py-0.2 rounded-md bg-bg-elevated text-text-secondary text-xs print:text-[10px] font-mono print:bg-gray-100 print:text-gray-700 print:border print:border-gray-200"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </section>
+
+              {/* Education */}
+              <section className="cv-avoid-break">
+                <h2 className="font-display font-bold text-base print:text-[13px] text-text-primary print:text-black mb-3 print:mb-1.5 uppercase tracking-wider border-b pb-2 print:pb-1 print:border-gray-300 cv-heading" style={{ borderColor: 'var(--border)' }}>
+                  Education
+                </h2>
+                <div>
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <h3 className="font-display font-bold text-text-primary print:text-black text-sm print:text-[12.5px]">
+                        Da Nang University of Science &amp; Technology (DUT)
+                      </h3>
+                      <p className="text-accent-blue font-medium text-sm print:text-[12px] print:text-blue-600">
+                        Information Technology Engineer — PFIEV (Programme de Formation d&apos;Ingénieurs d&apos;Excellence au Vietnam)
+                      </p>
+                    </div>
+                    <span className="text-text-muted text-caption print:text-[11px] shrink-0 print:text-gray-500 font-mono">
+                      09/2020 – 09/2025
+                    </span>
+                  </div>
+
+                  <p className="text-text-secondary text-sm print:text-[11.5px] mt-1 print:mt-0.5 print:text-gray-700">
+                    <span className="font-semibold text-text-primary print:text-black">Degree Classification:</span> Distinction (Giỏi) · <span className="font-semibold text-text-primary print:text-black">GPA:</span> 8.39 / 10 · 303 credits (10 semesters)
+                  </p>
+
+                  <div className="mt-2 print:mt-1.5 text-text-secondary text-xs print:text-[11px] print:leading-[1.4] print:text-gray-700 bg-bg-elevated/50 print:bg-gray-50 p-2.5 print:p-2 rounded-lg border border-border/50 print:border-gray-200">
+                    <p className="font-semibold text-text-primary print:text-black mb-1 print:mb-0.5 text-caption print:text-[11px]">
+                      Core CS &amp; Software Engineering Curriculum:
+                    </p>
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-3 gap-y-0.5 list-disc list-inside">
+                      <li>Operating Systems, Computer Architecture, System &amp; Linux Programming</li>
+                      <li>Computer Networks, Advanced &amp; Mobile Networking, Network Design &amp; QoS</li>
+                      <li>Network Security, Information Security &amp; Cryptography</li>
+                      <li>Databases, Advanced DB, Data Structures &amp; Data Mining</li>
+                      <li>Software Architecture, Distributed Systems &amp; Service-Oriented Architecture (SOA)</li>
+                      <li>Software Quality Assurance, Testing &amp; Software Project Management, ERP</li>
+                    </ul>
+                  </div>
+                </div>
+              </section>
+            </div>
           </div>
 
-          {/* ── Body ── */}
-          <div className="p-8 space-y-8">
-
-            {/* Summary */}
-            <section>
-              <h2 className="font-display font-bold text-base text-text-primary print:text-black mb-3 uppercase tracking-wider border-b pb-2 print:border-gray-200" style={{ borderColor: 'var(--border)' }}>
-                Summary
-              </h2>
-              <p className="text-text-secondary text-sm leading-relaxed print:text-gray-700">
-                {PERSONAL.bio}
-              </p>
-            </section>
-
-            {/* Experience */}
-            <section>
-              <h2 className="font-display font-bold text-base text-text-primary print:text-black mb-4 uppercase tracking-wider border-b pb-2 print:border-gray-200" style={{ borderColor: 'var(--border)' }}>
-                Experience
-              </h2>
-              <div className="space-y-6">
-                {EXPERIENCES.map((exp) => (
-                  <div key={`${exp.company}-${exp.period}`}>
-                    <div className="flex items-start justify-between gap-4 mb-1">
-                      <div>
-                        <h3 className="font-display font-bold text-text-primary print:text-black text-sm">
-                          {exp.role}
-                        </h3>
-                        <p className="text-accent-blue text-sm font-medium print:text-blue-600">
-                          {exp.company} · {exp.location}
-                        </p>
+          {/* ════════ PAGE 2 ════════ */}
+          <div className="cv-page p-8 pt-4 print:p-0">
+            <div className="space-y-8 print:space-y-3.5">
+              {/* Projects */}
+              <section className="cv-avoid-break">
+                <h2 className="font-display font-bold text-base print:text-[13px] text-text-primary print:text-black mb-4 print:mb-1.5 uppercase tracking-wider border-b pb-2 print:pb-1 print:border-gray-300 cv-heading" style={{ borderColor: 'var(--border)' }}>
+                  Projects
+                </h2>
+                <div className="space-y-5 print:space-y-2.5">
+                  {PROJECTS.map((project) => (
+                    <div key={project.id} className="cv-avoid-break">
+                      <div className="flex items-start justify-between gap-4 mb-1 print:mb-0.5">
+                        <div className="min-w-0">
+                          <h3 className="font-display font-bold text-text-primary print:text-black text-sm print:text-[12.5px] inline">
+                            {project.title}
+                          </h3>
+                          <span className="text-text-muted text-caption print:text-[11px] ml-2 print:text-gray-500">
+                            — {project.role}
+                          </span>
+                        </div>
+                        <span className="text-text-muted text-caption print:text-[11px] shrink-0 print:text-gray-500">
+                          {project.period}
+                        </span>
                       </div>
-                      <span className="text-text-muted text-caption shrink-0 print:text-gray-500">
-                        {exp.period}
-                      </span>
-                    </div>
-                    <ul className="mt-2 space-y-1">
-                      {exp.bullets.map((bullet, i) => (
-                        <li key={i} className="text-text-secondary text-sm flex gap-2 print:text-gray-700">
-                          <span className="text-accent-blue mt-0.5 shrink-0 print:text-blue-600">•</span>
-                          <span>{bullet}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    {exp.techStack && exp.techStack.length > 0 && (
-                      <div className="flex flex-wrap gap-1.5 mt-3">
-                        {exp.techStack.map((tech) => (
+                      <p className="text-text-secondary text-sm print:text-[12px] print:leading-[1.4] mb-1 print:mb-0.5 print:text-gray-700">{project.description}</p>
+                      <div className="flex flex-wrap gap-1.5 print:gap-1 mt-1.5 print:mt-1">
+                        {project.tags.map((tag) => (
                           <span
-                            key={tech}
-                            className="px-2 py-0.5 rounded-md bg-bg-elevated text-text-secondary text-xs font-mono print:bg-gray-100 print:text-gray-700"
+                            key={tag}
+                            className="px-2 py-0.5 print:px-1.5 print:py-0.2 rounded-md bg-bg-elevated text-text-secondary text-xs print:text-[10px] font-mono print:bg-gray-100 print:text-gray-700 print:border print:border-gray-200"
                           >
-                            {tech}
+                            {tag}
                           </span>
                         ))}
                       </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            {/* Education */}
-            <section>
-              <h2 className="font-display font-bold text-base text-text-primary print:text-black mb-3 uppercase tracking-wider border-b pb-2 print:border-gray-200" style={{ borderColor: 'var(--border)' }}>
-                Education
-              </h2>
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <h3 className="font-display font-bold text-text-primary print:text-black text-sm">
-                    Da Nang University of Science &amp; Technology
-                  </h3>
-                  <p className="text-text-secondary text-sm print:text-gray-700">
-                    Software Technology Engineer – PFIEV
-                  </p>
-                  <p className="text-text-muted text-caption mt-0.5 print:text-gray-500">
-                    Graduated with Distinction · GPA 8.3/10
-                  </p>
+                    </div>
+                  ))}
                 </div>
-                <span className="text-text-muted text-caption shrink-0 print:text-gray-500">
-                  2020 – 2025
-                </span>
-              </div>
-            </section>
+              </section>
 
-            {/* Projects */}
-            <section>
-              <h2 className="font-display font-bold text-base text-text-primary print:text-black mb-4 uppercase tracking-wider border-b pb-2 print:border-gray-200" style={{ borderColor: 'var(--border)' }}>
-                Projects
-              </h2>
-              <div className="space-y-5">
-                {PROJECTS.map((project) => (
-                  <div key={project.id}>
-                    <div className="flex items-start justify-between gap-4 mb-1">
+              {/* Awards */}
+              <section className="cv-avoid-break">
+                <h2 className="font-display font-bold text-base print:text-[13px] text-text-primary print:text-black mb-3 print:mb-1.5 uppercase tracking-wider border-b pb-2 print:pb-1 print:border-gray-300 cv-heading" style={{ borderColor: 'var(--border)' }}>
+                  Awards
+                </h2>
+                <div className="space-y-2 print:space-y-1">
+                  {AWARDS.map((award) => (
+                    <div key={award.title} className="flex items-start justify-between gap-4 cv-avoid-break">
                       <div className="min-w-0">
-                        <h3 className="font-display font-bold text-text-primary print:text-black text-sm inline">
-                          {project.title}
-                        </h3>
-                        <span className="text-text-muted text-caption ml-2 print:text-gray-500">
-                          — {project.role}
+                        <span className="text-sm print:text-[12px] text-text-primary print:text-black font-medium">
+                          {award.prize}
+                        </span>
+                        <span className="text-text-secondary text-sm print:text-[12px] print:text-gray-700">
+                          {' '}— {award.title}
+                        </span>
+                        <span className="text-text-muted text-caption print:text-[11px] print:text-gray-500">
+                          {' '}({award.issuer})
                         </span>
                       </div>
-                      <span className="text-text-muted text-caption shrink-0 print:text-gray-500">
-                        {project.period}
+                      <span className="text-text-muted text-caption print:text-[11px] shrink-0 print:text-gray-500">
+                        {award.date}
                       </span>
                     </div>
-                    <p className="text-text-secondary text-sm mb-1 print:text-gray-700">{project.description}</p>
-                    <div className="flex flex-wrap gap-1.5 mt-1.5">
-                      {project.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="px-2 py-0.5 rounded-md bg-bg-elevated text-text-secondary text-xs font-mono print:bg-gray-100 print:text-gray-700"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section>
+                  ))}
+                </div>
+              </section>
 
-            {/* Awards */}
-            <section>
-              <h2 className="font-display font-bold text-base text-text-primary print:text-black mb-3 uppercase tracking-wider border-b pb-2 print:border-gray-200" style={{ borderColor: 'var(--border)' }}>
-                Awards
-              </h2>
-              <div className="space-y-2">
-                {AWARDS.map((award) => (
-                  <div key={award.title} className="flex items-start justify-between gap-4">
-                    <div className="min-w-0">
-                      <span className="text-sm text-text-primary print:text-black font-medium">
-                        {award.prize}
+              {/* Skills */}
+              <section className="cv-avoid-break">
+                <h2 className="font-display font-bold text-base print:text-[13px] text-text-primary print:text-black mb-3 print:mb-1.5 uppercase tracking-wider border-b pb-2 print:pb-1 print:border-gray-300 cv-heading" style={{ borderColor: 'var(--border)' }}>
+                  Skills
+                </h2>
+                <div className="space-y-2 print:space-y-1.5">
+                  {SKILLS.map((skill) => (
+                    <div key={skill.category} className="flex gap-3 items-baseline cv-avoid-break">
+                      <span className="text-sm print:text-[12px] font-semibold text-text-primary print:text-black w-44 shrink-0">
+                        {skill.category}:
                       </span>
-                      <span className="text-text-secondary text-sm print:text-gray-700">
-                        {' '}— {award.title}
-                      </span>
-                      <span className="text-text-muted text-caption print:text-gray-500">
-                        {' '}({award.issuer})
+                      <span className="text-sm print:text-[12px] print:leading-[1.4] text-text-secondary print:text-gray-700">
+                        {skill.items.join(' · ')}
                       </span>
                     </div>
-                    <span className="text-text-muted text-caption shrink-0 print:text-gray-500">
-                      {award.date}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            {/* Skills */}
-            <section>
-              <h2 className="font-display font-bold text-base text-text-primary print:text-black mb-3 uppercase tracking-wider border-b pb-2 print:border-gray-200" style={{ borderColor: 'var(--border)' }}>
-                Skills
-              </h2>
-              <div className="space-y-2">
-                {SKILLS.map((skill) => (
-                  <div key={skill.category} className="flex gap-3">
-                    <span className="text-sm font-medium text-text-primary print:text-black w-32 shrink-0">
-                      {skill.category}:
-                    </span>
-                    <span className="text-sm text-text-secondary print:text-gray-700">
-                      {skill.items.join(' · ')}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </section>
-
+                  ))}
+                </div>
+              </section>
+            </div>
           </div>
+
+
         </div>
       </div>
     </div>

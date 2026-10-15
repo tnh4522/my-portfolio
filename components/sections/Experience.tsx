@@ -6,7 +6,7 @@ import TimelineItem from '@/components/ui/TimelineItem';
 import SectionHeading from '@/components/ui/SectionHeading';
 
 const staggerContainer = {
-  animate: { transition: { staggerChildren: 0.08 } },
+  animate: { transition: { staggerChildren: 0.12 } },
 };
 
 export default function Experience() {
@@ -15,14 +15,14 @@ export default function Experience() {
   return (
     <section id="experience">
       <div className="container-inner">
-        <SectionHeading title="Experience" />
+        <SectionHeading title="Experience" index={2} />
 
         <motion.div
           className="relative max-w-2xl"
           variants={prefersReducedMotion ? undefined : staggerContainer}
           initial="initial"
           whileInView="animate"
-          viewport={{ once: true, margin: '-100px' }}
+          viewport={{ once: true, margin: '-80px' }}
         >
           {EXPERIENCES.map((exp, index) => (
             <TimelineItem

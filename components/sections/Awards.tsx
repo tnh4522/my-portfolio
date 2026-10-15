@@ -5,52 +5,59 @@ import { AWARDS } from '@/lib/data';
 import AwardBadge from '@/components/ui/AwardBadge';
 import SectionHeading from '@/components/ui/SectionHeading';
 
-const fadeUp = {
-  initial: { opacity: 0, y: 24 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] as const },
+const staggerContainer = {
+  animate: { transition: { staggerChildren: 0.09 } },
 };
 
-const staggerContainer = {
-  animate: { transition: { staggerChildren: 0.08 } },
+const fadeUp = {
+  initial: { opacity: 0, y: 28 },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] as const },
+  },
 };
 
 export default function Awards() {
   const prefersReducedMotion = useReducedMotion();
 
+  const goldAward = AWARDS.find((a) => a.tier === 'gold');
+  const otherAwards = AWARDS.filter((a) => a.tier !== 'gold');
+
   return (
     <section id="awards">
       <div className="container-inner">
-        <SectionHeading title="Awards" />
+        <SectionHeading title="Awards" index={4} />
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="flex flex-col gap-5"
           variants={prefersReducedMotion ? undefined : staggerContainer}
           initial="initial"
           whileInView="animate"
-          viewport={{ once: true, margin: '-100px' }}
+          viewport={{ once: true, margin: '-80px' }}
         >
-          {AWARDS.map((award) => {
-            const isGold = award.tier === 'gold';
+          {/* Gold award — full-width hero banner */}
+          {goldAward && (
+            <motion.div variants={prefersReducedMotion ? undefined : fadeUp}>
+              <AwardBadge award={goldAward} featured />
+            </motion.div>
+          )}
 
-            return (
+          {/* Other awards — responsive 2 / 3-col grid */}
+          <motion.div
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
+            variants={prefersReducedMotion ? undefined : staggerContainer}
+          >
+            {otherAwards.map((award) => (
               <motion.div
                 key={award.title}
-                className={`h-full ${isGold ? 'md:col-span-2 lg:col-span-1' : ''}`}
                 variants={prefersReducedMotion ? undefined : fadeUp}
-                style={
-                  isGold
-                    ? {
-                        boxShadow: '0 0 40px var(--glow), 0 0 80px var(--glow)',
-                        borderRadius: '0.75rem',
-                      }
-                    : undefined
-                }
+                className="h-full"
               >
-                <AwardBadge award={award} featured={isGold} />
+                <AwardBadge award={award} />
               </motion.div>
-            );
-          })}
+            ))}
+          </motion.div>
         </motion.div>
       </div>
     </section>

@@ -3,30 +3,34 @@
 /* ===== Theme Variables — Light/Dark switching ===== */
 :root {
   /* Light mode colors */
-  --bg-base:        #F8F9FC;
+  --bg-base:        #FAFAFA;
   --bg-surface:     #FFFFFF;
-  --bg-elevated:    #EFF1F5;
+  --bg-elevated:    #F3F4F8;
   --accent-primary: #3B82F6;
   --accent-warm:    #F97B4F;
-  --text-primary:   #111827;
+  --text-primary:   #0D0D12;
   --text-secondary: #4B5563;
   --text-muted:     #9CA3AF;
-  --border:         rgba(0, 0, 0, 0.08);
+  --border:         rgba(0, 0, 0, 0.07);
+  --border-strong:  rgba(0, 0, 0, 0.12);
   --glow:           rgba(59, 130, 246, 0.12);
+  --surface-highlight: rgba(255, 255, 255, 0.9);
 }
 
 .dark {
-  /* Dark mode colors */
-  --bg-base:        #0D0F14;
-  --bg-surface:     #13161D;
-  --bg-elevated:    #1C2030;
+  /* Dark mode — Ink & Signal palette */
+  --bg-base:        #09090C;
+  --bg-surface:     #111116;
+  --bg-elevated:    #1A1A22;
   --accent-primary: #4F9CF9;
   --accent-warm:    #F97B4F;
-  --text-primary:   #EDF0F7;
-  --text-secondary: #8B93A7;
-  --text-muted:     #4A5165;
+  --text-primary:   #F0F0F5;
+  --text-secondary: #7A7E8C;
+  --text-muted:     #3D404E;
   --border:         rgba(255, 255, 255, 0.06);
+  --border-strong:  rgba(255, 255, 255, 0.10);
   --glow:           rgba(79, 156, 249, 0.15);
+  --surface-highlight: rgba(255, 255, 255, 0.04);
 }
 
 /* ===== Design System Tokens (Tailwind CSS v4) ===== */
@@ -47,34 +51,53 @@
   --font-mono: var(--font-jetbrains), ui-monospace, monospace;
 
   /* Font Sizes with line-height and letter-spacing */
-  --text-display: clamp(2.5rem, 6vw, 5rem);
-  --text-display--line-height: 1.05;
-  --text-display--letter-spacing: 0;
+  --text-display: clamp(2.75rem, 7vw, 5.5rem);
+  --text-display--line-height: 1.0;
+  --text-display--letter-spacing: -0.03em;
 
-  --text-h1: clamp(1.8rem, 4vw, 3rem);
+  --text-h1: clamp(2rem, 4.5vw, 3.5rem);
   --text-h1--line-height: 1.1;
+  --text-h1--letter-spacing: -0.02em;
 
-  --text-h2: clamp(1.3rem, 2.5vw, 1.875rem);
+  --text-h2: clamp(1.35rem, 2.5vw, 1.875rem);
   --text-h2--line-height: 1.2;
+  --text-h2--letter-spacing: -0.01em;
 
   --text-body: 1rem;
-  --text-body--line-height: 1.7;
+  --text-body--line-height: 1.75;
 
   --text-caption: 0.8125rem;
   --text-caption--line-height: 1.5;
 
   /* Animations */
-  --animate-float: float 6s ease-in-out infinite;
+  --animate-float: float 7s ease-in-out infinite;
   --animate-blink: blink 1s step-end infinite;
   --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-shimmer: shimmer 2.5s linear infinite;
 
   @keyframes float {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-12px); }
+    50% { transform: translateY(-10px); }
   }
   @keyframes blink {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
+  }
+  @keyframes shimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+  }
+  @keyframes grain {
+    0%, 100% { transform: translate(0, 0); }
+    10% { transform: translate(-1%, -2%); }
+    20% { transform: translate(2%, 1%); }
+    30% { transform: translate(-1%, 3%); }
+    40% { transform: translate(1%, -1%); }
+    50% { transform: translate(-2%, 2%); }
+    60% { transform: translate(2%, -2%); }
+    70% { transform: translate(-1%, 1%); }
+    80% { transform: translate(1%, 2%); }
+    90% { transform: translate(-2%, -1%); }
   }
 }
 
@@ -95,37 +118,62 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: background-color 0.3s ease, color 0.3s ease;
+  position: relative;
+}
+
+/* ===== Noise Texture Overlay ===== */
+body::before {
+  content: '';
+  position: fixed;
+  inset: -200%;
+  width: 400%;
+  height: 400%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.022;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
+  animation: grain 8s steps(10) infinite;
+}
+
+/* Ensure page content is above noise layer */
+body > * {
+  position: relative;
+  z-index: 1;
 }
 
 /* ===== Selection ===== */
 ::selection {
-  background: rgba(79, 156, 249, 0.3);
+  background: rgba(79, 156, 249, 0.25);
   color: var(--text-primary);
 }
 
 /* ===== Scrollbar ===== */
-::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: var(--bg-base); }
-::-webkit-scrollbar-thumb { background: var(--text-muted); border-radius: 3px; }
+::-webkit-scrollbar-thumb {
+  background: var(--text-muted);
+  border-radius: 99px;
+}
 ::-webkit-scrollbar-thumb:hover { background: var(--accent-primary); }
 
 /* ===== Section Spacing ===== */
 section {
-  padding: clamp(4rem, 5vw, 7rem) 0;
+  padding: clamp(5rem, 6vw, 8rem) 0;
 }
 
 /* ===== Container ===== */
 .container-inner {
-  max-width: 1100px;
+  max-width: 1120px;
   margin: 0 auto;
-  padding: 0 clamp(1rem, 5vw, 2rem);
+  padding: 0 clamp(1.25rem, 5vw, 2.5rem);
 }
 
 /* ===== Focus Styles ===== */
 *:focus-visible {
   outline: 2px solid var(--accent-primary);
   outline-offset: 2px;
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
 /* ===== Scroll Progress Bar ===== */
@@ -133,11 +181,52 @@ section {
   position: fixed;
   top: 0;
   left: 0;
-  height: 3px;
-  background: var(--accent-primary);
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-warm));
   z-index: 9999;
   transition: none;
+  box-shadow: 0 0 8px var(--glow);
 }
+
+/* ===== Card surface helper ===== */
+.card-surface {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border);
+  position: relative;
+}
+
+/* Inner top-edge highlight (glass feel) */
+.card-surface::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--surface-highlight);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+/* ===== Shimmer gradient text utility ===== */
+.text-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--accent-primary) 0%,
+    var(--accent-warm) 40%,
+    var(--accent-primary) 80%,
+    var(--accent-primary) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+/* ===== Bento grid helpers ===== */
+.bento-tall { grid-row: span 2; }
+.bento-wide { grid-column: span 2; }
 
 /* ===== Theme transition for cards & surfaces ===== */
 .dark [style*="border-color"],
@@ -145,13 +234,25 @@ section {
   transition: border-color 0.3s ease;
 }
 
-/* ===== Print Styles ===== */
+/* ===== Print Page Definition ===== */
+@page {
+  size: A4 portrait;
+  margin: 0;
+}
+
 @media print {
   html, body {
     background: white !important;
-    color: black !important;
+    color: #111827 !important;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+
+  body::before {
+    display: none !important;
   }
 
   .scroll-progress {
@@ -159,11 +260,47 @@ section {
   }
 
   section {
-    padding: 0;
+    padding: 0 !important;
   }
 
-  @page {
-    margin: 1cm;
-    size: A4;
+  .container-inner,
+  .cv-sheet {
+    max-width: none !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    background: transparent !important;
+  }
+
+  .cv-page {
+    width: 210mm !important;
+    min-height: 297mm !important;
+    max-height: 297mm !important;
+    height: 297mm !important;
+    padding: 14mm 16mm 14mm 16mm !important;
+    box-sizing: border-box !important;
+    margin: 0 auto !important;
+    background: white !important;
+    overflow: hidden !important;
+    page-break-after: always !important;
+    break-after: page !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .cv-page:last-child {
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+  }
+
+  .cv-avoid-break {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .cv-heading {
+    break-after: avoid !important;
+    page-break-after: avoid !important;
   }
 }
