@@ -8,6 +8,8 @@ export interface Project {
   tags: string[];
   role: string;
   highlight?: boolean;
+  github?: string;
+  demo?: string;
 }
 
 export interface Experience {

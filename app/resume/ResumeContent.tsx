@@ -280,6 +280,30 @@ export default function ResumeContent() {
                           <span className="text-text-muted text-caption print:text-[11px] ml-2 print:text-gray-500">
                             — {project.role}
                           </span>
+                          {(project.demo || project.github) && (
+                            <span className="inline-flex items-center gap-2 ml-2 text-caption print:text-[10px]">
+                              {project.demo && (
+                                <a
+                                  href={project.demo}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="text-accent-blue hover:underline print:text-blue-600"
+                                >
+                                  [Demo]
+                                </a>
+                              )}
+                              {project.github && (
+                                <a
+                                  href={project.github}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="text-text-muted hover:text-accent-blue print:text-gray-600"
+                                >
+                                  [GitHub]
+                                </a>
+                              )}
+                            </span>
+                          )}
                         </div>
                         <span className="text-text-muted text-caption print:text-[11px] shrink-0 print:text-gray-500">
                           {project.period}

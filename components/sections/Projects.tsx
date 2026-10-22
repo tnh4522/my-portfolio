@@ -60,13 +60,14 @@ export default function Projects() {
             </motion.div>
           ))}
 
-          {/* Remaining projects — fill 2-col in next row */}
+          {/* Remaining projects — span full 3-col width if single project */}
           {rest.map((project) => (
             <motion.div
               key={project.id}
+              className={rest.length === 1 ? 'md:col-span-3' : undefined}
               variants={prefersReducedMotion ? undefined : fadeUp}
             >
-              <ProjectCard project={project} />
+              <ProjectCard project={project} featured={rest.length === 1} />
             </motion.div>
           ))}
         </motion.div>

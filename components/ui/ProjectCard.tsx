@@ -1,8 +1,27 @@
 'use client';
 
 import { useState } from 'react';
+import { ExternalLink } from 'lucide-react';
 import type { Project } from '@/lib/types';
 import SkillBadge from './SkillBadge';
+
+function GithubIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65S8.93 17.38 9 18v4" />
+      <path d="M9 18c-4.51 2-5-2-7-2" />
+    </svg>
+  );
+}
 
 interface ProjectCardProps {
   project: Project;
@@ -50,34 +69,44 @@ export default function ProjectCard({ project, featured = false }: ProjectCardPr
             {project.period}
           </span>
           <span
-            className="font-mono text-[10px] uppercase tracking-widest"
+            className="font-mono text-[10px] uppercase tracking-widest font-semibold"
             style={{ color: 'var(--accent-primary)' }}
           >
             {project.role}
           </span>
         </div>
-        {/* Arrow indicator on hover */}
-        <div
-          className="w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-all duration-300"
-          style={{
-            background: hovered ? 'var(--accent-primary)' : 'var(--bg-elevated)',
-            transform: hovered ? 'rotate(-45deg)' : 'rotate(0deg)',
-          }}
-          aria-hidden="true"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            className="w-3.5 h-3.5"
-            style={{ color: hovered ? 'white' : 'var(--text-muted)' }}
-          >
-            <path
-              fillRule="evenodd"
-              d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z"
-              clipRule="evenodd"
-            />
-          </svg>
+
+        {/* Action Links (GitHub & Live Demo) */}
+        <div className="flex items-center gap-1.5 shrink-0 z-10">
+          {project.github && (
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`GitHub repository for ${project.title}`}
+              title="View Source on GitHub"
+              className="w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200 text-text-secondary hover:text-white hover:bg-white/10"
+              style={{ background: 'var(--bg-elevated)' }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <GithubIcon className="w-4 h-4" />
+            </a>
+          )}
+          {project.demo && (
+            <a
+              href={project.demo}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Live demo for ${project.title}`}
+              title="Open Live Demo"
+              className="h-8 px-2.5 rounded-full flex items-center gap-1.5 transition-all duration-200 text-xs font-mono font-medium text-white hover:brightness-110 shadow-xs"
+              style={{ background: 'var(--accent-primary)' }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <span>Demo</span>
+              <ExternalLink className="w-3.5 h-3.5" />
+            </a>
+          )}
         </div>
       </div>
 
@@ -85,12 +114,23 @@ export default function ProjectCard({ project, featured = false }: ProjectCardPr
       <h3
         className="font-display font-extrabold text-text-primary mb-1 transition-colors duration-200"
         style={{
-          fontSize: featured ? 'var(--text-h2)' : '1.05rem',
+          fontSize: featured ? 'var(--text-h2)' : '1.1rem',
           letterSpacing: '-0.015em',
           color: hovered ? 'var(--accent-primary)' : undefined,
         }}
       >
-        {project.title}
+        {project.demo ? (
+          <a
+            href={project.demo}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:underline"
+          >
+            {project.title}
+          </a>
+        ) : (
+          project.title
+        )}
       </h3>
 
       {/* Subtitle */}
@@ -99,17 +139,17 @@ export default function ProjectCard({ project, featured = false }: ProjectCardPr
       </p>
 
       {/* ── Description ── */}
-      <p className="text-text-secondary text-sm mb-4 leading-relaxed flex-1">
+      <p className="text-text-secondary text-sm mb-4 leading-relaxed">
         {project.description}
       </p>
 
-      {/* ── Key bullets (shown in featured card) ── */}
-      {featured && project.bullets && project.bullets.length > 0 && (
-        <ul className="space-y-2 mb-5">
-          {project.bullets.slice(0, 3).map((bullet, i) => (
+      {/* ── Key bullets ── */}
+      {project.bullets && project.bullets.length > 0 && (
+        <ul className="space-y-2 mb-5 flex-1">
+          {project.bullets.slice(0, featured ? 4 : 2).map((bullet, i) => (
             <li
               key={i}
-              className="text-text-secondary text-sm flex gap-2 leading-relaxed"
+              className="text-text-secondary text-xs sm:text-sm flex gap-2 leading-relaxed"
             >
               <span
                 className="shrink-0 mt-[5px] w-1.5 h-1.5 rounded-full"
