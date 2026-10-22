@@ -27,9 +27,11 @@ interface ProjectCardProps {
   project: Project;
   /** When true the card receives the "hero" treatment (larger, more detail) */
   featured?: boolean;
+  /** Numerical order index (e.g. 1, 2, 3, 4) */
+  index?: number;
 }
 
-export default function ProjectCard({ project, featured = false }: ProjectCardProps) {
+export default function ProjectCard({ project, featured = false, index }: ProjectCardProps) {
   const [hovered, setHovered] = useState(false);
 
   return (
@@ -37,8 +39,7 @@ export default function ProjectCard({ project, featured = false }: ProjectCardPr
       className={`
         group relative card-surface rounded-2xl transition-all duration-300
         flex flex-col h-full overflow-hidden cursor-default
-        hover:-translate-y-1
-        ${featured ? 'p-7' : 'p-5'}
+        hover:-translate-y-1 p-6 sm:p-7
       `}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -60,14 +61,27 @@ export default function ProjectCard({ project, featured = false }: ProjectCardPr
       />
 
       {/* ── Header ── */}
-      <div className="flex items-start justify-between mb-4 gap-2">
-        <div className="flex flex-col gap-1">
+      <div className="flex items-start justify-between mb-4 gap-2 flex-wrap">
+        <div className="flex items-center gap-2.5">
+          {index !== undefined && (
+            <span
+              className="font-mono text-xs font-bold px-2 py-0.5 rounded-md"
+              style={{
+                background: 'var(--bg-elevated)',
+                color: 'var(--accent-primary)',
+                border: '1px solid rgba(79,156,249,0.25)',
+              }}
+            >
+              0{index}
+            </span>
+          )}
           <span
             className="font-mono text-[10px] uppercase tracking-widest"
             style={{ color: 'var(--text-muted)' }}
           >
             {project.period}
           </span>
+          <span className="text-text-muted text-xs">•</span>
           <span
             className="font-mono text-[10px] uppercase tracking-widest font-semibold"
             style={{ color: 'var(--accent-primary)' }}
@@ -77,7 +91,7 @@ export default function ProjectCard({ project, featured = false }: ProjectCardPr
         </div>
 
         {/* Action Links (GitHub & Live Demo) */}
-        <div className="flex items-center gap-1.5 shrink-0 z-10">
+        <div className="flex items-center gap-2 shrink-0 z-10">
           {project.github && (
             <a
               href={project.github}
@@ -99,7 +113,7 @@ export default function ProjectCard({ project, featured = false }: ProjectCardPr
               rel="noopener noreferrer"
               aria-label={`Live demo for ${project.title}`}
               title="Open Live Demo"
-              className="h-8 px-2.5 rounded-full flex items-center gap-1.5 transition-all duration-200 text-xs font-mono font-medium text-white hover:brightness-110 shadow-xs"
+              className="h-8 px-3 rounded-full flex items-center gap-1.5 transition-all duration-200 text-xs font-mono font-medium text-white hover:brightness-110 shadow-xs"
               style={{ background: 'var(--accent-primary)' }}
               onClick={(e) => e.stopPropagation()}
             >
@@ -112,9 +126,8 @@ export default function ProjectCard({ project, featured = false }: ProjectCardPr
 
       {/* ── Title ── */}
       <h3
-        className="font-display font-extrabold text-text-primary mb-1 transition-colors duration-200"
+        className="font-display font-extrabold text-text-primary mb-1.5 transition-colors duration-200 text-lg sm:text-xl md:text-2xl"
         style={{
-          fontSize: featured ? 'var(--text-h2)' : '1.1rem',
           letterSpacing: '-0.015em',
           color: hovered ? 'var(--accent-primary)' : undefined,
         }}
@@ -134,25 +147,25 @@ export default function ProjectCard({ project, featured = false }: ProjectCardPr
       </h3>
 
       {/* Subtitle */}
-      <p className="font-mono text-[11px] text-text-muted mb-3 italic">
+      <p className="font-mono text-xs text-text-muted mb-3 italic">
         {project.subtitle}
       </p>
 
       {/* ── Description ── */}
-      <p className="text-text-secondary text-sm mb-4 leading-relaxed">
+      <p className="text-text-secondary text-sm sm:text-[14.5px] mb-4 leading-relaxed">
         {project.description}
       </p>
 
       {/* ── Key bullets ── */}
       {project.bullets && project.bullets.length > 0 && (
         <ul className="space-y-2 mb-5 flex-1">
-          {project.bullets.slice(0, featured ? 4 : 2).map((bullet, i) => (
+          {project.bullets.map((bullet, i) => (
             <li
               key={i}
-              className="text-text-secondary text-xs sm:text-sm flex gap-2 leading-relaxed"
+              className="text-text-secondary text-xs sm:text-sm flex gap-2.5 leading-relaxed"
             >
               <span
-                className="shrink-0 mt-[5px] w-1.5 h-1.5 rounded-full"
+                className="shrink-0 mt-[6px] w-1.5 h-1.5 rounded-full"
                 style={{ background: 'var(--accent-primary)' }}
                 aria-hidden="true"
               />
