@@ -82,9 +82,9 @@ export default function Contact() {
           {/* ── Left: CTA text + email ── */}
           <div>
             <p className="text-text-secondary text-body max-w-lg mb-8 leading-relaxed">
-              I&apos;m open to frontend-focused roles, freelance projects, and
-              interesting collaborations. Feel free to reach out — I usually reply
-              within 24 hours.
+              I&apos;m open to Full-Stack Developer, IT Engineer, Systems/Network roles,
+              and interesting technical collaborations. Feel free to reach out — I usually
+              reply within 24 hours.
             </p>
 
             {/* Email — primary CTA */}
@@ -208,13 +208,13 @@ export default function Contact() {
               Open to opportunities
             </p>
             <p className="text-text-secondary text-sm mt-3 leading-relaxed">
-              Looking for frontend or full-stack roles. Remote-friendly. Based in Da Nang, Vietnam.
+              Looking for Full-Stack or IT/System Engineer roles. Remote-friendly. Based in Hoa Khanh, Da Nang, Vietnam.
             </p>
             <div
               className="mt-5 pt-4 flex flex-col gap-2"
               style={{ borderTop: '1px solid var(--border)' }}
             >
-              {['Frontend / Full-stack roles', 'Freelance projects', 'Open source collab'].map((item) => (
+              {['Full-stack Web/App roles', 'IT & Systems Engineering', 'System Integration & ERP'].map((item) => (
                 <div key={item} className="flex items-center gap-2">
                   <span
                     className="w-1.5 h-1.5 rounded-full shrink-0"

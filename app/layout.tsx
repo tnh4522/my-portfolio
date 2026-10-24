@@ -25,24 +25,24 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Tran Ngoc Huy — Junior Full-Stack Developer",
+  title: "Trần Ngọc Huy — Information Technology Engineer & Full-Stack Developer",
   description:
-    "Portfolio of Tran Ngoc Huy — Junior Full-Stack Developer at Lundi Matin Groupe (France). Building interfaces that work, from Da Nang to the French cloud.",
+    "Portfolio of Trần Ngọc Huy — Information Technology Engineer (DUT - PFIEV) & Full-Stack Developer with 2+ years of production experience in ERP, CRM, E-commerce, and Computer Networking.",
   openGraph: {
-    title: "Tran Ngoc Huy — Junior Full-Stack Developer",
+    title: "Trần Ngọc Huy — Information Technology Engineer & Full-Stack Developer",
     description:
-      "Portfolio of Tran Ngoc Huy — Junior Full-Stack Developer at Lundi Matin Groupe (France). Building interfaces that work, from Da Nang to the French cloud.",
+      "Portfolio of Trần Ngọc Huy — Information Technology Engineer (DUT - PFIEV) & Full-Stack Developer with 2+ years of production experience in ERP, CRM, E-commerce, and Computer Networking.",
     type: "website",
     locale: "en_US",
     images: [{ url: "/og.png", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tran Ngoc Huy — Junior Full-Stack Developer",
+    title: "Trần Ngọc Huy — Information Technology Engineer & Full-Stack Developer",
     description:
-      "Portfolio of Tran Ngoc Huy — Junior Full-Stack Developer at Lundi Matin Groupe (France).",
+      "Portfolio of Trần Ngọc Huy — Information Technology Engineer & Full-Stack Developer.",
   },
-  metadataBase: new URL("https://tranngochy.dev"),
+  metadataBase: new URL("https://huytran-4522.vercel.app"),
   icons: { icon: "/favicon.svg" },
 };
 

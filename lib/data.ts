@@ -1,133 +1,131 @@
-import { Project, Experience, Award, Skill, DrupalProject } from './types';
+import { Project, Experience, Award, Skill, DrupalProject, Certification, Language, Volunteering } from './types';
 
 export const PERSONAL = {
   name: 'Trần Ngọc Huy',
   nameEn: 'Tran Ngoc Huy',
-  role: 'Junior Full-Stack Developer',
-  tagline: 'Building interfaces that work — from Da Nang',
+  role: 'Information Technology Engineer',
+  tagline: 'Full-Stack Web/App Developer & Systems Engineer — from Da Nang',
   email: 'tnh2045@gmail.com',
-  phone: '0777 408 164',
-  location: 'Hoa Khanh Bac, Lien Chieu, Da Nang, Vietnam',
-  linkedin: 'https://www.linkedin.com/in/tran-huy-183ba1194',
+  phone: '+84 777 408 164',
+  dob: '04/05/2002',
+  location: 'Hoa Khanh, Da Nang, Vietnam',
+  linkedin: 'https://www.linkedin.com/in/tran-huy-183ba1194/',
   github: 'https://github.com/tnh4522',
-  website: 'https://huytran-4522.vercel.app',
+  website: 'https://huytran-4522.vercel.app/',
   skill: [
-    'ReactJS', 'Next.js', 'Vue.js', 'TypeScript',
-    'Tailwind CSS', 'Bootstrap', 'Figma',
-    'PHP', 'Laravel', 'Drupal', 'WordPress',
-    'Python', 'Django', 'MySQL', 'REST API',
-    'NodeJS', 'ASP.NET', 'Java'
+    'PHP', 'JavaScript/TypeScript', 'ReactJS', 'Next.js',
+    'Vue.js', 'AngularJS', 'Yii2', 'Symfony',
+    'Laravel', 'Drupal', 'WordPress', 'MySQL',
+    'REST API', 'Linux', 'Docker', 'TCP/IP'
   ],
-  bio: `Web developer with 2+ years of hands-on experience building and shipping customer-facing e-commerce interfaces, currently working full-time on a live retail platform at Lundi Matin Groupe (France). I combine solid frontend skills (HTML5, CSS3, JavaScript, jQuery, ReactJS) with a product-first mindset — thinking from the end user's perspective to remove friction, simplify flows, and write copy that drives action. Comfortable customizing CMS-driven pages beyond what default builders offer, and experienced working iteratively with real content on production websites. I care about clean interfaces, reliable code, and building things that actually get used.`,
+  bio: `Information Technology Engineer — Da Nang University of Science and Technology (The University of Da Nang) with 2+ years of hands-on experience developing and operating Web/App systems (ERP, CRM, E-commerce). Proven capability in performance optimization and agile troubleshooting in live Production environments. Possesses a solid foundation in Computer Networking (LAN/WAN, TCP/IP, VLAN, DNS, DHCP), Windows/Linux administration, troubleshooting, Information Security, and Database Management. Ready to take on complex technical challenges and proactively seek optimal solutions for businesses.`,
 };
 
 export const EXPERIENCES: Experience[] = [
   {
-    company: 'Lundi Matin Groupe',
-    location: 'France (Remote)',
-    role: 'Full-stack Developer',
-    period: '2024 – Present',
+    company: 'Lundi Matin Groupe (France)',
+    location: 'Remote from Da Nang',
+    role: 'Full-Stack Developer',
+    period: '03/2024 – 10/2026',
     type: 'full-time',
     logo: '/images/lundi-matin-logo.svg',
     bullets: [
-      'Work on the customer-facing e-commerce platform used by online and brick-and-mortar retail clients across France; directly responsible for improvements to shopping UI and user flows.',
-      'Collaborate with Product Owners in a French-language environment to translate store-operations and UX requirements into polished front-end implementations.',
-      'Contribute custom HTML/CSS/JS overrides to extend the platform\'s default builder capabilities — nav bar behaviour, cart flow, service block layouts, and filtering components.',
-      'Participate in structured code review and QA before each release, maintaining a stable and visually consistent user experience.',
-      'Integrated LiteLLM/AI API features and debugged production PHP/JavaScript issues in a legacy Prototype.js codebase.',
+      'Developed and maintained enterprise ERP, CRM, and e-commerce systems for clients in France.',
+      'Applied core technologies including PHP, JavaScript, AngularJS, Vue.js, Twig, HTML, CSS, and MySQL across Yii2, Symfony, WordPress, and Drupal frameworks.',
+      'Built and integrated REST APIs, cron jobs, ESB2, connectors, MCP, and webhooks to connect internal systems with external third-party services.',
+      'Contributed to projects and third-party platform integrations including Viva payment, Riashop, Yuto, EBP SaaS, Wimoov, Station-one, Axialease, Cogasa, Uppler, and Izberg.',
+      'Identified and resolved production bugs in legacy codebases, ensuring stable and reliable system operations.',
+      'Worked with GitHub, GitLab, and CI/CD pipelines under the Scrum process; participated in code reviews and pre-release QA with weekly progress reports.',
     ],
-    techStack: ['Drupal', 'Twig', 'WordPress', 'PHP', 'Laravel', 'Symfony', 'Yii', 'JavaScript', 'jQuery', 'Vue.js', 'AngularJS', 'HTML', 'Tailwind CSS', 'Bootstrap', 'MySQL', 'Figma', 'REST API', 'ERP', 'CRM'],
+    techStack: ['PHP', 'JavaScript', 'AngularJS', 'Vue.js', 'Twig', 'HTML', 'CSS', 'MySQL', 'Yii2', 'Symfony', 'WordPress', 'Drupal', 'REST API', 'Cron', 'ESB2', 'Connector', 'MCP', 'Webhook', 'GitHub', 'GitLab', 'CI/CD', 'Scrum'],
   },
   {
     company: 'Tekup JSC',
     location: 'Da Nang, Vietnam',
-    role: 'Web Front-End Developer Intern',
-    period: 'May – Jul 2023',
+    role: 'Web Front-End',
+    period: '05/2023 – 07/2023',
     type: 'internship',
     logo: '/images/logo-tekup.png',
     bullets: [
-      'Built responsive customer-facing websites using HTML, CSS, JavaScript, jQuery, Tailwind CSS, and Bootstrap.',
-      'Led a small team end-to-end from planning through delivery, coordinating tasks and visual direction.',
-      'Adapted quickly to new frontend tools and frameworks under real production deadlines.',
+      'Built responsive customer-facing websites using HTML, CSS, and JavaScript.',
+      'Trained in ReactJS, jQuery, Tailwind CSS, and Bootstrap.',
+      'Collaborated in a small team to plan, divide tasks, and deliver products on schedule.',
     ],
-    techStack: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'jQuery', 'Tailwind CSS', 'Figma'],
+    techStack: ['HTML', 'CSS', 'JavaScript', 'ReactJS', 'jQuery', 'Tailwind CSS', 'Bootstrap'],
   },
 ];
 
 export const PROJECTS: Project[] = [
   {
     id: 'foodmart-ai',
-    title: 'FOODMART – AI E-Commerce Platform',
+    title: 'FoodMart – AI-Integrated E-Commerce Platform',
     subtitle: 'Intelligent Grocery Shopping with Gemini Vision & Resilience Architecture',
-    period: '2024',
-    role: 'Frontend Developer',
+    period: '2023',
+    role: 'Full-stack Developer',
     description:
       'Feature-rich SPA e-commerce platform powered by Google Gemini 1.5 Flash Vision for AI recipe generation, featuring an enterprise-grade Circuit Breaker resilience layer for zero-downtime UX.',
     bullets: [
-      'Engineered responsive SPA architecture with React 18, implementing complete e-commerce flows: product catalog, dynamic cart, checkout, wishlist, and interactive reviews.',
-      'Integrated Google Gemini 1.5 Flash API (Multimodal Vision) allowing users to upload photo ingredients/dishes for AI recognition and automated recipe generation with ingredient checklists.',
-      'Architected an API Resilience Layer implementing Circuit Breaker patterns (Closed/Open/Half-Open) with an Offline Mock Store to ensure uninterrupted shopping during backend failures.',
-      'Implemented multi-tier Role-Based Access Control (Admin / Seller / Customer) via strict Protected Routes; integrated EmailJS for automated order confirmations.',
-      'Authored unit tests for exception handling and Circuit Breaker logic using Jest & React Testing Library.',
+      'Built a React 18 SPA covering the complete shopping flow: product catalog, cart, checkout & payment, wishlist, and ratings/reviews.',
+      'Integrated Gemini 1.5 Flash (Vision): upload ingredient/dish photos for AI recognition and recipe suggestions with ingredient checklists.',
+      'Designed an API Resilience layer using the Circuit Breaker pattern (Closed/Open/Half-Open) combined with an Offline Mock Store to keep the system running during backend outages.',
+      'Implemented Admin/Seller/Customer authorization via Protected Routes; automated order confirmation emails (EmailJS); wrote unit tests with Jest & React Testing Library.',
     ],
-    tags: ['React 18', 'Gemini AI', 'Ant Design', 'Circuit Breaker', 'Jest', 'Bootstrap 5', 'Material-UI', 'EmailJS'],
+    tags: ['React 18', 'Gemini AI', 'React Router v6', 'Axios', 'Ant Design', 'Circuit Breaker', 'Jest', 'EmailJS'],
     highlight: true,
     github: 'https://github.com/tnh4522/e-commerce',
     demo: 'https://food-grocery.netlify.app/',
   },
   {
     id: 'ashion-vendor',
-    title: 'Ashion Vendor – Management Platform',
+    title: 'Ashion Vendor – E-Commerce Seller Management Platform',
     subtitle: 'E-Commerce Vendor Admin with Visual AI & Financial Analytics',
-    period: '2024',
-    role: 'Frontend Developer',
+    period: '2023',
+    role: 'Full-stack Developer',
     description:
       'Comprehensive vendor administration platform featuring role-based access control, AI-assisted visual search, dynamic financial reporting, and PDF invoice generation.',
     bullets: [
-      'Developed administrative dashboard managing products, customer orders, inventory stock, user accounts, and financial performance.',
-      'Implemented granular role-based access control (RBAC) across administrative modules and route protections with ProtectedRoute.',
-      'Integrated AI capabilities: Visual Search for image-based product discovery and automated product image generation.',
-      'Constructed interactive financial reporting charts with Chart.js, supporting instant Excel/PDF export and order invoice printing via jsPDF.',
+      'Developed an admin dashboard to manage products, orders, customers, inventory/warehousing, and finances.',
+      'Implemented Role-Based Access Control (RBAC) across individual features and protected pages (ProtectedRoute).',
+      'Integrated AI features: Visual Search by image and automated product image generation.',
+      'Built a financial dashboard with Chart.js; supported instant Excel/PDF report exports and invoice printing.',
     ],
-    tags: ['React 18', 'Vite', 'Ant Design 5', 'Chart.js', 'AI Visual Search', 'RBAC', 'jsPDF', 'EmailJS'],
+    tags: ['React 18', 'Vite', 'Chart.js', 'jsPDF', 'EmailJS', 'RBAC', 'Visual Search AI'],
     highlight: true,
     github: 'https://github.com/tnh4522/ashion-vendor',
     demo: 'https://tendancia-admin.netlify.app/',
   },
   {
     id: 'mystictarot-ai',
-    title: 'MysticTarot AI – Interactive Tarot & Consultation',
+    title: 'MysticTarot AI – Interactive Tarot Reading & AI Consultation',
     subtitle: 'AI Psychological Insights with 78 Cards & Gemini Reader',
-    period: '2024 – 2025',
+    period: '2024',
     role: 'Full-stack Developer',
     description:
       'Interactive Tarot reading and psychological counseling web app powered by Google Gemini AI, offering 78-card interpretations and conversational AI readings.',
     bullets: [
-      'Built interactive Tarot web app supporting 78 upright/reversed cards with multiple spread layouts (Single Card, 3-Card Timeline, Celtic Cross).',
-      'Integrated Google Gemini API (@google/genai) to interpret cards and synthesize personalized advice tailored across multiple reader personas (Empathetic, Direct, Mystical).',
-      'Engineered interactive conversational chat reader allowing users to hold follow-up discussions directly with the AI Reader to unpack reading nuances.',
-      'Implemented a comprehensive Tarot encyclopedia and reading history management system with persistent local storage.',
+      'Built an interactive Tarot web app featuring all 78 cards (upright/reversed) and multiple spread layouts (1-Card, 3-Card, Celtic Cross…).',
+      'Integrated Gemini AI to interpret readings across multiple tones (Empathetic, Direct, Mystical) with follow-up conversational chat with the AI Reader.',
+      'Added a comprehensive Tarot encyclopedia and reading history persistence using Local Storage.',
     ],
-    tags: ['Next.js', 'React 19', 'TypeScript', 'Tailwind CSS', 'Google Gemini API', 'Generative AI'],
+    tags: ['Next.js', 'React 19', 'TypeScript', 'Gemini API'],
     highlight: true,
     github: 'https://github.com/tnh4522/tarrot-web',
     demo: 'https://tarrot-daily.vercel.app/',
   },
   {
     id: 'network-quest',
-    title: 'Network Quest – Gamified Learning Platform',
+    title: 'Network Quest – Gamified Networking Practice Platform',
     subtitle: 'Interactive Networking & CCNA Training Hub with Firewall Minigame',
-    period: '2025',
-    role: 'Frontend / Full-stack Developer',
+    period: '2024',
+    role: 'Full-stack Developer',
     description:
-      'Gamified web app supporting CS students and engineers in mastering Computer Networking, CCNA, and firewall concepts through dynamic quizzes and packet filtering minigames.',
+      'Gamified web app for practicing Computer Networking (CCNA, Firewall/Packet filtering) through interactive quizzes and firewall simulation minigames.',
     bullets: [
-      'Crafted dynamic quiz UI equipped with countdown timers, progress bars, question navigators, and comprehensive explanation breakdowns.',
-      'Built interactive gamified minigames simulating firewall security rules and packet filtering mechanics.',
-      'Designed robust state management and session persistence with Zustand (LocalStorage-backed quiz progress and streak tracking).',
-      'Visualized learning progression and score analytics using Recharts; implemented unit tests for scoring logic and state handling with Vitest.',
+      'Built a Computer Networking practice web app (CCNA, Firewall/Packet filtering) featuring timed quizzes, progress bars, and detailed answer explanations.',
+      'Developed an interactive minigame simulating firewall security rules (Firewall Simulation).',
+      'Managed state and practice history with Zustand (LocalStorage); visualized score analytics with Recharts; wrote unit tests with Vitest.',
     ],
-    tags: ['Next.js 16', 'React 19', 'TypeScript', 'Tailwind CSS v4', 'Zustand', 'Recharts', 'Vitest'],
+    tags: ['Recharts', 'Next.js 16', 'React 19', 'TypeScript', 'Zustand', 'Vitest'],
     highlight: false,
     github: 'https://github.com/tnh4522/network-quest',
     demo: 'https://network-quest-omega.vercel.app/',
@@ -136,79 +134,125 @@ export const PROJECTS: Project[] = [
 
 export const AWARDS: Award[] = [
   {
+    title: 'DUT Hackathon',
+    issuer: 'KMS Technology',
+    date: '02/2023',
+    prize: '1st Prize 🏆',
+    tier: 'gold',
+  },
+  {
     title: 'Innovative Technology Entrepreneurship Competition',
     issuer: 'The University of Da Nang',
-    date: 'Oct 2024',
+    date: '10/2024',
     prize: '2nd Prize',
     tier: 'silver',
   },
   {
-    title: 'BKDN Techshow — Technology Exhibition 2023-2024',
+    title: 'BKDN Techshow 2023–2024',
     issuer: 'Da Nang University of Science and Technology',
-    date: 'Jan 2024',
+    date: '01/2024',
     prize: '3rd Prize, Technology Award',
     tier: 'bronze',
   },
   {
     title: 'Smart Campus 2023',
-    issuer: 'Danang International Institute of Technology',
-    date: 'Dec 2023',
-    prize: '2nd Prize & Special Recognition Award',
+    issuer: 'DISC International Institute – UD',
+    date: '12/2023',
+    prize: '2nd Prize & Special Award',
     tier: 'silver',
   },
   {
     title: 'Startup Innovation Ideas — Light Up Your Creativity 2023',
     issuer: 'Da Nang Youth Union',
-    date: 'Dec 2023',
+    date: '12/2023',
     prize: '2nd Prize',
     tier: 'silver',
   },
   {
     title: 'Scientific Research Student Conference — FAST Tech Show 2023',
     issuer: 'Da Nang University of Science and Technology',
-    date: 'Nov 2023',
+    date: '11/2023',
     prize: '2nd Prize',
     tier: 'silver',
-  },
-  {
-    title: 'DUT Hackathon — FASTER Team',
-    issuer: 'KMS Technology',
-    date: 'Feb 2023',
-    prize: '1st Prize 🏆',
-    tier: 'gold',
   },
 ];
 
 export const SKILLS: Skill[] = [
   {
-    category: 'UI / UX & Design',
-    items: ['Component-based UI', 'Figma', 'UX Design', 'User Flows'],
+    category: 'Web/App Development',
+    items: ['PHP', 'Java', 'JavaScript/TypeScript', 'AngularJS', 'Vue.js', 'C#', 'C/C++', 'ReactJS', 'Next.js', 'jQuery', 'HTML5/CSS3', 'Twig', 'Python'],
   },
   {
-    category: 'Frontend',
-    items: ['ReactJS', 'Next.js', 'Vue.js', 'AngularJS', 'TypeScript', 'Vite', 'HTML5', 'CSS3', 'JavaScript', 'jQuery', 'Tailwind CSS', 'Bootstrap', 'Twig'],
+    category: 'Frameworks & CMS',
+    items: ['Yii2', 'Symfony', 'Laravel', 'Drupal', 'WordPress', 'Django', 'Spring Boot', 'React', 'Next'],
   },
   {
-    category: 'CMS & Site Builders',
-    items: ['Drupal', 'WordPress'],
+    category: 'System Integration',
+    items: ['REST API', 'Webhook', 'Cron', 'ESB2', 'Connector', 'MCP'],
   },
   {
-    category: 'Backend',
-    items: ['PHP (Laravel, Symfony, Yii)', 'Java (Spring Boot)', 'Python (Django / DRF)', 'NodeJS (ExpressJS)', '.NET (ASP.NET)', 'RESTful APIs', 'Web Services API', 'JWT Auth'],
+    category: 'Systems & Databases',
+    items: ['Linux', 'MySQL', 'MariaDB', 'Docker'],
   },
   {
-    category: 'Database & Tools',
-    items: ['MySQL', 'MariaDB', 'MongoDB', 'Git / GitHub / GitLab', 'Docker', 'Trello', 'Jira'],
+    category: 'Tools & Workflows',
+    items: ['Git', 'GitHub', 'GitLab', 'CI/CD', 'Jira', 'Agile/Scrum', 'Code Review', 'Jest/Vitest'],
   },
   {
-    category: 'Workflow',
-    items: ['Agile', 'Scrum', 'Code Review', 'CI/CD'],
+    category: 'Computer Networking',
+    items: ['LAN/WAN', 'TCP/IP', 'Subnetting', 'VLAN', 'Trunk', 'DNS', 'DHCP'],
   },
   {
-    category: 'DevOps',
-    items: ['Linux'],
+    category: 'OS & Troubleshooting',
+    items: ['Windows', 'Linux', 'IP/Network Configuration', 'Account & Permission Management', 'ipconfig', 'ping', 'tracert', 'nslookup', 'System Monitoring', 'User Support (Helpdesk)'],
+  },
+  {
+    category: 'Infrastructure Tools',
+    items: ['Wireshark', 'Cisco Packet Tracer', 'VMware'],
   },
 ];
+
+export const LANGUAGES: Language[] = [
+  {
+    name: 'English',
+    level: 'Advanced',
+    certificate: 'TOEIC 510/990',
+  },
+  {
+    name: 'French',
+    level: 'Basic',
+    certificate: 'DELF B1',
+  },
+];
+
+export const CERTIFICATIONS: Certification[] = [
+  {
+    id: 'cert-toeic',
+    name: 'TOEIC – Test of English for International Communication',
+    issuer: 'IIG Vietnam',
+    date: '01/2025 – 01/2027',
+    details: ['Score: 510/990'],
+  },
+  {
+    id: 'cert-delf-b1',
+    name: 'DELF B1 – French Language Diploma',
+    issuer: 'France Éducation international (French Ministry of Education)',
+    date: '10/2022',
+    details: ['Level B1 according to the Common European Framework of Reference for Languages (CEFR)'],
+  },
+];
+
+export const VOLUNTEERING: Volunteering[] = [
+  {
+    id: 'vol-summer-2022',
+    organization: 'The University of Da Nang Student Summer Volunteer Campaign 2022',
+    role: 'Volunteer',
+    date: '07/2022',
+    location: 'Da Nang, Vietnam',
+    summary: 'Actively participated and contributed to the campaign; awarded a Certificate of Recognition by the Youth Union of The University of Da Nang (07/2022).',
+  },
+];
+
 
 export const DRUPAL_PROJECTS: DrupalProject[] = [
   {

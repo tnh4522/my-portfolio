@@ -10,6 +10,17 @@ import {
   FileCheck,
   Sparkles,
   Code,
+  Webhook,
+  Clock,
+  Cpu,
+  Plug,
+  Terminal,
+  ShieldCheck,
+  Activity,
+  Headphones,
+  Server,
+  Globe,
+  Router,
 } from 'lucide-react';
 
 interface SkillBadgeProps {
@@ -21,11 +32,11 @@ function getDeviconClass(name: string): string | null {
   const normalized = name.toLowerCase();
 
   if (normalized.includes('react')) return 'devicon-react-original colored';
-  if (normalized.includes('next.js')) return 'devicon-nextjs-plain';
-  if (normalized.includes('vue.js')) return 'devicon-vuejs-plain colored';
+  if (normalized.includes('next.js') || normalized === 'next') return 'devicon-nextjs-plain';
+  if (normalized.includes('vue.js') || normalized === 'vue') return 'devicon-vuejs-plain colored';
   if (normalized.includes('angular')) return 'devicon-angularjs-plain colored';
-  if (normalized.includes('typescript')) return 'devicon-typescript-plain colored';
-  if (normalized.includes('vite')) return 'devicon-vite-plain colored';
+  if (normalized.includes('javascript/typescript') || normalized.includes('typescript')) return 'devicon-typescript-plain colored';
+  if (normalized.includes('vite') && !normalized.includes('vitest')) return 'devicon-vite-plain colored';
   if (normalized.includes('html')) return 'devicon-html5-plain colored';
   if (normalized.includes('css')) return 'devicon-css3-plain colored';
   if (normalized.includes('javascript')) return 'devicon-javascript-plain colored';
@@ -35,6 +46,10 @@ function getDeviconClass(name: string): string | null {
   if (normalized.includes('figma')) return 'devicon-figma-plain colored';
   if (normalized.includes('drupal')) return 'devicon-drupal-plain colored';
   if (normalized.includes('wordpress')) return 'devicon-wordpress-plain colored';
+
+  // C# & C/C++
+  if (normalized === 'c#') return 'devicon-csharp-plain colored';
+  if (normalized.includes('c/c++') || normalized === 'c++') return 'devicon-cplusplus-plain colored';
 
   // PHP & Frameworks
   if (normalized.includes('laravel')) return 'devicon-laravel-original colored';
@@ -62,16 +77,18 @@ function getDeviconClass(name: string): string | null {
   if (normalized.includes('mariadb')) return 'devicon-mariadb-plain colored';
   if (normalized.includes('mongodb')) return 'devicon-mongodb-plain colored';
 
-  // Version Control
+  // Version Control & Testing
   if (normalized.includes('github')) return 'devicon-github-original';
   if (normalized.includes('gitlab')) return 'devicon-gitlab-plain colored';
   if (normalized.includes('git')) return 'devicon-git-plain colored';
+  if (normalized.includes('jest')) return 'devicon-jest-plain colored';
 
   // Management & Systems
   if (normalized.includes('docker')) return 'devicon-docker-plain colored';
   if (normalized.includes('trello')) return 'devicon-trello-plain colored';
   if (normalized.includes('jira')) return 'devicon-jira-plain colored';
   if (normalized.includes('linux')) return 'devicon-linux-plain colored';
+  if (normalized.includes('windows')) return 'devicon-windows8-original colored';
 
   return null;
 }
@@ -84,8 +101,19 @@ function getLucideIcon(name: string) {
   if (normalized.includes('component')) return Layers;
 
   if (normalized.includes('twig')) return Code;
+  if (normalized.includes('webhook')) return Webhook;
+  if (normalized.includes('cron')) return Clock;
+  if (normalized.includes('esb') || normalized.includes('mcp')) return Cpu;
+  if (normalized.includes('connector')) return Plug;
   if (normalized.includes('rest') || normalized.includes('api')) return Network;
-  if (normalized.includes('jwt')) return Key;
+  if (normalized.includes('jwt') || normalized.includes('account') || normalized.includes('permission')) return ShieldCheck;
+
+  if (normalized.includes('lan') || normalized.includes('wan') || normalized.includes('tcp') || normalized.includes('subnet') || normalized.includes('vlan') || normalized.includes('trunk')) return Router;
+  if (normalized.includes('dns') || normalized.includes('dhcp') || normalized.includes('ip/network')) return Globe;
+  if (normalized.includes('ipconfig') || normalized.includes('ping') || normalized.includes('tracert') || normalized.includes('nslookup')) return Terminal;
+  if (normalized.includes('monitoring') || normalized.includes('wireshark')) return Activity;
+  if (normalized.includes('helpdesk') || normalized.includes('support')) return Headphones;
+  if (normalized.includes('cisco') || normalized.includes('vmware')) return Server;
 
   if (normalized.includes('agile')) return Layers;
   if (normalized.includes('scrum')) return RefreshCw;

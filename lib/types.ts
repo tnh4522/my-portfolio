@@ -45,3 +45,27 @@ export interface DrupalProject {
   category: string;
   tags: string[];
 }
+
+export interface Certification {
+  id: string;
+  name: string;
+  issuer: string;
+  date: string;
+  details: string[];
+}
+
+export interface Language {
+  name: string;
+  level: string;
+  certificate?: string;
+}
+
+export interface Volunteering {
+  id: string;
+  organization: string;
+  role: string;
+  date: string;
+  location: string;
+  summary: string;
+}
+

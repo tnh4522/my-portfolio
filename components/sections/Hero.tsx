@@ -115,7 +115,7 @@ const floatingCards = [
                 <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" strokeWidth="6" />
               </g>
             </svg>
-            <span>English — TOEIC 510</span>
+            <span>English — Advanced (TOEIC 510)</span>
           </span>
           <span className="font-display text-sm font-bold text-text-primary inline-flex items-center gap-2">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" className="w-5 h-3.5 rounded-sm shrink-0">
@@ -123,7 +123,7 @@ const floatingCards = [
               <rect width="1" height="2" x="1" fill="#fff" />
               <rect width="1" height="2" x="2" fill="#ED2939" />
             </svg>
-            <span>French — B1</span>
+            <span>French — Basic (DELF B1)</span>
           </span>
         </div>
       </>

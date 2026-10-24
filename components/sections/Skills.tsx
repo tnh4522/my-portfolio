@@ -34,14 +34,10 @@ export default function Skills() {
           viewport={{ once: true, margin: '-80px' }}
         >
           {SKILLS.map((skill, index) => {
-            /* Frontend & Backend get double-wide treatment */
-            const isWide =
-              skill.category === 'Frontend' || skill.category === 'Backend';
-
             return (
               <motion.div
                 key={skill.category}
-                className={`card-surface rounded-2xl p-6 ${isWide ? 'md:col-span-2' : ''}`}
+                className="card-surface rounded-2xl p-6"
                 variants={prefersReducedMotion ? undefined : fadeUp}
                 style={{
                   /* Stagger glow accents between cards */
