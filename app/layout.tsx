@@ -25,22 +25,22 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Trần Ngọc Huy — Information Technology Engineer & Full-Stack Developer",
+  title: "Trần Ngọc Huy — Full-stack Developer",
   description:
-    "Portfolio of Trần Ngọc Huy — Information Technology Engineer (DUT - PFIEV) & Full-Stack Developer with 2+ years of production experience in ERP, CRM, E-commerce, and Computer Networking.",
+    "Portfolio of Trần Ngọc Huy — Full-stack Developer with 2+ years of experience developing and building Web/App systems (ERP, CRM, CHR, E-commerce) at Lundi Matin Groupe (France).",
   openGraph: {
-    title: "Trần Ngọc Huy — Information Technology Engineer & Full-Stack Developer",
+    title: "Trần Ngọc Huy — Full-stack Developer",
     description:
-      "Portfolio of Trần Ngọc Huy — Information Technology Engineer (DUT - PFIEV) & Full-Stack Developer with 2+ years of production experience in ERP, CRM, E-commerce, and Computer Networking.",
+      "Portfolio of Trần Ngọc Huy — Full-stack Developer with 2+ years of experience developing and building Web/App systems (ERP, CRM, CHR, E-commerce) at Lundi Matin Groupe (France).",
     type: "website",
     locale: "en_US",
     images: [{ url: "/og.png", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Trần Ngọc Huy — Information Technology Engineer & Full-Stack Developer",
+    title: "Trần Ngọc Huy — Full-stack Developer",
     description:
-      "Portfolio of Trần Ngọc Huy — Information Technology Engineer & Full-Stack Developer.",
+      "Portfolio of Trần Ngọc Huy — Full-stack Developer at Lundi Matin Groupe (France).",
   },
   metadataBase: new URL("https://huytran-4522.vercel.app"),
   icons: { icon: "/favicon.svg" },

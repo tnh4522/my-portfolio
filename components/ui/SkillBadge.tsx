@@ -69,8 +69,9 @@ function getDeviconClass(name: string): string | null {
   if (normalized.includes('express')) return 'devicon-express-original';
   if (normalized.includes('nodejs') || normalized.includes('node')) return 'devicon-nodejs-plain colored';
 
-  // .NET
+  // .NET & UI Libraries
   if (normalized.includes('asp.net') || normalized.includes('.net')) return 'devicon-dot-net-plain colored';
+  if (normalized.includes('ant design')) return 'devicon-antdesign-plain colored';
 
   // Databases & Tools
   if (normalized.includes('mysql')) return 'devicon-mysql-plain colored';
@@ -84,7 +85,7 @@ function getDeviconClass(name: string): string | null {
   if (normalized.includes('jest')) return 'devicon-jest-plain colored';
 
   // Management & Systems
-  if (normalized.includes('docker')) return 'devicon-docker-plain colored';
+  if (normalized.includes('docker') || normalized.includes('ddev')) return 'devicon-docker-plain colored';
   if (normalized.includes('trello')) return 'devicon-trello-plain colored';
   if (normalized.includes('jira')) return 'devicon-jira-plain colored';
   if (normalized.includes('linux')) return 'devicon-linux-plain colored';
@@ -96,6 +97,7 @@ function getDeviconClass(name: string): string | null {
 function getLucideIcon(name: string) {
   const normalized = name.toLowerCase();
 
+  if (normalized.includes('claude') || normalized.includes('codex') || normalized.includes('antigravity')) return Sparkles;
   if (normalized.includes('ux design') || normalized.includes('ux')) return Compass;
   if (normalized.includes('user flows') || normalized.includes('flow')) return GitBranch;
   if (normalized.includes('component')) return Layers;

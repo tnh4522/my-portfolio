@@ -233,10 +233,10 @@ export default function ResumeContent() {
                   <div className="flex items-start justify-between gap-4">
                     <div>
                       <h3 className="font-display font-bold text-text-primary print:text-black text-sm print:text-[12px]">
-                        Da Nang University of Science &amp; Technology — The University of Da Nang
+                        Da Nang University of Science and Technology – The University of Danang
                       </h3>
                       <p className="text-accent-blue font-medium text-sm print:text-[11.5px] print:text-blue-600">
-                        Information Technology Engineer — High-Quality Vietnamese–French Engineering Program (PFIEV)
+                        Engineer in Information Technology
                       </p>
                     </div>
                     <span className="text-text-muted text-caption print:text-[11px] shrink-0 print:text-gray-500 font-mono">
@@ -245,21 +245,16 @@ export default function ResumeContent() {
                   </div>
 
                   <p className="text-text-secondary text-sm print:text-[11px] mt-1 print:mt-0.5 print:text-gray-700">
-                    <span className="font-semibold text-text-primary print:text-black">Graduated with Distinction (Giỏi)</span> | <span className="font-semibold text-text-primary print:text-black">GPA:</span> 8.39 / 10 | 303 credits, 10 semesters
+                    <span className="font-semibold text-text-primary print:text-black">Graduated with Honors (Very Good)</span> | <span className="font-semibold text-text-primary print:text-black">GPA:</span> 8.39/10. Relevant foundational coursework:
                   </p>
 
-                  <div className="mt-2 print:mt-1 text-text-secondary text-xs print:text-[10.5px] print:leading-[1.36] print:text-gray-700 bg-bg-elevated/50 print:bg-gray-50 p-2.5 print:p-2 rounded-lg border border-border/50 print:border-gray-200">
-                    <p className="font-semibold text-text-primary print:text-black mb-1 print:mb-0.5 text-caption print:text-[10.5px]">
-                      Core IT Curriculum in the Training Program:
-                    </p>
-                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-3 gap-y-0.5 list-disc list-inside">
-                      <li>Operating Systems, Computer Architecture, System &amp; Linux Programming</li>
-                      <li>Computer Networks, Data Communications, Advanced &amp; Mobile Networks, Network Design &amp; QoS</li>
-                      <li>Network Security, Information Security, Cryptography &amp; Encryption</li>
-                      <li>Databases, Advanced Databases, Data Structures &amp; Data Mining</li>
-                      <li>Software Architecture, Distributed Systems &amp; Service-Oriented Architecture (SOA)</li>
-                      <li>Information Systems and ERP</li>
-                      <li className="sm:col-span-2">Software Quality Assurance, Software Testing, Software Project Management</li>
+                  <div className="mt-2 print:mt-1 text-text-secondary text-xs print:text-[10.8px] print:leading-[1.4] print:text-gray-700 bg-bg-elevated/50 print:bg-gray-50 p-2.5 print:p-2 rounded-lg border border-border/50 print:border-gray-200">
+                    <ul className="space-y-0.5 list-disc list-inside">
+                      <li>Databases, Advanced Databases, Data Structures and Data Mining.</li>
+                      <li>Software Architecture, Distributed Systems Architecture and Development.</li>
+                      <li>Service-Oriented Architecture, Information Systems and ERP.</li>
+                      <li>Software Quality Assurance, Software Testing, Software Project Management.</li>
+                      <li>Operating Systems, System Programming, Computer Networks, Network Security, Information Security.</li>
                     </ul>
                   </div>
                 </div>
@@ -401,21 +396,21 @@ export default function ResumeContent() {
                     </div>
                   </section>
 
-                  <section>
-                    <h2 className="font-display font-bold text-base print:text-[12.5px] text-text-primary print:text-black mb-2 print:mb-1 uppercase tracking-wider border-b pb-1.5 print:pb-0.5 print:border-gray-300 cv-heading" style={{ borderColor: 'var(--border)' }}>
+                  <section className="print:hidden">
+                    <h2 className="font-display font-bold text-base text-text-primary mb-2 uppercase tracking-wider border-b pb-1.5 cv-heading" style={{ borderColor: 'var(--border)' }}>
                       Volunteering
                     </h2>
                     {VOLUNTEERING.map((vol) => (
                       <div key={vol.id}>
                         <div className="flex items-baseline justify-between gap-2">
-                          <span className="text-xs print:text-[10.8px] font-semibold text-text-primary print:text-black">
+                          <span className="text-xs font-semibold text-text-primary">
                             {vol.role} — {vol.organization}
                           </span>
-                          <span className="text-caption print:text-[10px] text-text-muted print:text-gray-500 shrink-0 font-mono">
+                          <span className="text-caption text-text-muted shrink-0 font-mono">
                             {vol.date}
                           </span>
                         </div>
-                        <p className="text-xs print:text-[10.2px] text-text-secondary print:text-gray-700 mt-0.5">
+                        <p className="text-xs text-text-secondary mt-0.5">
                           {vol.summary}
                         </p>
                       </div>

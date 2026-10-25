@@ -125,13 +125,13 @@ export default function About() {
                 className="font-display font-extrabold text-text-primary text-base mb-1"
                 style={{ letterSpacing: '-0.01em' }}
               >
-                Da Nang University of Science &amp; Technology — UD
+                Da Nang University of Science and Technology – The University of Danang
               </h3>
               <p className="text-text-secondary text-sm">
-                Information Technology Engineer — High-Quality Vietnamese–French Engineering Program (PFIEV)
+                Engineer in Information Technology
               </p>
               <div className="flex flex-wrap gap-2 mt-3">
-                {['09/2020 – 09/2025', 'Graduated with Distinction (Giỏi)', 'GPA 8.39 / 10', '303 Credits · 10 Semesters'].map((tag) => (
+                {['09/2020 – 09/2025', 'Graduated with Honors (Very Good)', 'GPA: 8.39/10'].map((tag) => (
                   <span
                     key={tag}
                     className="font-mono text-[11px] px-2.5 py-1 rounded-full"
@@ -204,14 +204,14 @@ export default function About() {
                     <div key={cert.id} className="flex flex-col gap-0.5">
                       <div className="flex items-baseline justify-between gap-2">
                         <span className="text-text-primary text-xs font-semibold">
-                          {cert.name.split('–')[0].trim()}
+                          {cert.name}
                         </span>
                         <span className="font-mono text-[10px] text-text-muted shrink-0">
                           {cert.date}
                         </span>
                       </div>
                       <span className="text-text-secondary text-xs">
-                        {cert.issuer} · {cert.details[0]}
+                        {cert.issuer} · {cert.details[cert.details.length - 1]}
                       </span>
                     </div>
                   ))}

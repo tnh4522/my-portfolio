@@ -3,7 +3,7 @@ import ResumeContent from './ResumeContent';
 
 export const metadata: Metadata = {
   title: 'Resume — Trần Ngọc Huy',
-  description: 'Resume of Trần Ngọc Huy — Information Technology Engineer & Full-Stack Developer.',
+  description: 'Resume of Trần Ngọc Huy — Full-stack Developer at Lundi Matin Groupe (France).',
 };
 
 export default function ResumePage() {
