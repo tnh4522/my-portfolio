@@ -1,11 +1,11 @@
 'use client';
 
+import { createElement } from 'react';
 import {
   Compass,
   GitBranch,
   Layers,
   Network,
-  Key,
   RefreshCw,
   FileCheck,
   Sparkles,
@@ -162,10 +162,10 @@ export default function SkillBadge({ name, compact = false }: SkillBadgeProps) {
       {deviconClass ? (
         <i className={`${deviconClass} ${compact ? 'text-[11px]' : 'text-sm'} shrink-0`} />
       ) : LucideIcon ? (
-        <LucideIcon
-          className={`${compact ? 'w-3 h-3' : 'w-3.5 h-3.5'} shrink-0`}
-          style={{ color: 'var(--accent-primary)' }}
-        />
+        createElement(LucideIcon, {
+          className: `${compact ? 'w-3 h-3' : 'w-3.5 h-3.5'} shrink-0`,
+          style: { color: 'var(--accent-primary)' },
+        })
       ) : null}
       <span>{name}</span>
     </span>

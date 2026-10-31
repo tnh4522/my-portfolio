@@ -31,7 +31,7 @@ interface ProjectCardProps {
   index?: number;
 }
 
-export default function ProjectCard({ project, featured = false, index }: ProjectCardProps) {
+export default function ProjectCard({ project, index }: ProjectCardProps) {
   const [hovered, setHovered] = useState(false);
 
   return (
