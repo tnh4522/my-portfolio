@@ -214,13 +214,13 @@ export const SKILLS: Skill[] = [
 export const LANGUAGES: Language[] = [
   {
     name: 'English',
-    level: 'Advanced',
-    certificate: 'TOEIC 510/990',
+    level: 'Intermediate',
+    certificate: 'TOEIC 510/990 (CEFR B1)',
   },
   {
     name: 'French',
-    level: 'Basic',
-    certificate: 'DELF B1',
+    level: 'Intermediate',
+    certificate: 'DELF B1 (French Ministry of Education)',
   },
 ];
 

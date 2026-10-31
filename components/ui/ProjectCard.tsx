@@ -99,7 +99,7 @@ export default function ProjectCard({ project, featured = false, index }: Projec
               rel="noopener noreferrer"
               aria-label={`GitHub repository for ${project.title}`}
               title="View Source on GitHub"
-              className="w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200 text-text-secondary hover:text-white hover:bg-white/10"
+              className="relative w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200 text-text-secondary hover:text-white hover:bg-white/10 after:absolute after:inset-[-6px] after:content-['']"
               style={{ background: 'var(--bg-elevated)' }}
               onClick={(e) => e.stopPropagation()}
             >
@@ -113,7 +113,7 @@ export default function ProjectCard({ project, featured = false, index }: Projec
               rel="noopener noreferrer"
               aria-label={`Live demo for ${project.title}`}
               title="Open Live Demo"
-              className="h-8 px-3 rounded-full flex items-center gap-1.5 transition-all duration-200 text-xs font-mono font-medium text-white hover:brightness-110 shadow-xs"
+              className="relative h-8 px-3 rounded-full flex items-center gap-1.5 transition-all duration-200 text-xs font-mono font-medium text-white hover:brightness-110 shadow-xs after:absolute after:inset-[-4px] after:content-['']"
               style={{ background: 'var(--accent-primary)' }}
               onClick={(e) => e.stopPropagation()}
             >
@@ -152,7 +152,7 @@ export default function ProjectCard({ project, featured = false, index }: Projec
       </p>
 
       {/* ── Description ── */}
-      <p className="text-text-secondary text-sm sm:text-[14.5px] mb-4 leading-relaxed">
+      <p className="text-text-secondary text-sm mb-4 leading-relaxed">
         {project.description}
       </p>
 

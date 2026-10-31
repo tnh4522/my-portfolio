@@ -4,6 +4,7 @@ import ScrollProgress from '@/components/ui/ScrollProgress';
 import Hero from '@/components/sections/Hero';
 import About from '@/components/sections/About';
 import Experience from '@/components/sections/Experience';
+import DrupalPortfolio from '@/components/sections/DrupalPortfolio';
 import Projects from '@/components/sections/Projects';
 import Awards from '@/components/sections/Awards';
 import Skills from '@/components/sections/Skills';
@@ -18,6 +19,7 @@ export default function Home() {
         <Hero />
         <About />
         <Experience />
+        <DrupalPortfolio />
         <Projects />
         <Awards />
         <Skills />

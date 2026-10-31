@@ -46,8 +46,9 @@ export default function DrupalPortfolio() {
       <section id="drupal-portfolio">
         <div className="container-inner">
           <SectionHeading
-            title="Drupal Portfolio"
-            subtitle="Production e-commerce websites built with Drupal at Lundi Matin Groupe — serving retail clients across France."
+            title="Client Work (Drupal & E-commerce)"
+            subtitle="Production e-commerce websites and systems built for retail clients across France at Lundi Matin Groupe."
+            index={3}
           />
 
           {/* Grid — 2-column on desktop */}

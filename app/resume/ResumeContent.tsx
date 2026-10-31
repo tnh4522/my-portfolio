@@ -420,11 +420,11 @@ export default function ResumeContent() {
               </div>
 
               {/* Awards (Shown on screen, hidden in print per JSON hiddenItemIds) */}
-              <section className="cv-avoid-break print:hidden">
-                <h2 className="font-display font-bold text-base text-text-primary mb-3 uppercase tracking-wider border-b pb-2 cv-heading" style={{ borderColor: 'var(--border)' }}>
+              <section className="cv-avoid-break mt-6 print:mt-3">
+                <h2 className="font-display font-bold text-base print:text-xs text-text-primary mb-3 print:mb-1.5 uppercase tracking-wider border-b pb-2 print:pb-1 cv-heading" style={{ borderColor: 'var(--border)' }}>
                   Awards
                 </h2>
-                <div className="space-y-2">
+                <div className="space-y-2 print:space-y-1">
                   {AWARDS.map((award) => (
                     <div key={award.title} className="flex items-start justify-between gap-4 cv-avoid-break">
                       <div className="min-w-0">

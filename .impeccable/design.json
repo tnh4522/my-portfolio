@@ -1,0 +1,268 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-31T12:43:00.000Z",
+  "title": "Design System: Trần Ngọc Huy Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "primary": {
+        "role": "primary",
+        "displayName": "Signal Azure",
+        "canonical": "#4F9CF9",
+        "tonalRamp": [
+          "#0A1F3D",
+          "#103366",
+          "#1B4E99",
+          "#286DCC",
+          "#4F9CF9",
+          "#7DB5FB",
+          "#A8CFFD",
+          "#D4E7FE"
+        ]
+      },
+      "secondary": {
+        "role": "secondary",
+        "displayName": "Ember Coral",
+        "canonical": "#F97B4F",
+        "tonalRamp": [
+          "#3D170A",
+          "#662912",
+          "#993E1C",
+          "#CC5528",
+          "#F97B4F",
+          "#FA9B78",
+          "#FCBCA4",
+          "#FDDDD1"
+        ]
+      },
+      "bg-base": {
+        "role": "neutral",
+        "displayName": "Obsidian Depth",
+        "canonical": "#09090C",
+        "tonalRamp": [
+          "#040406",
+          "#09090C",
+          "#13131A",
+          "#1D1D28",
+          "#282837",
+          "#3B3B4F",
+          "#55556F",
+          "#757593"
+        ]
+      },
+      "bg-surface": {
+        "role": "neutral",
+        "displayName": "Smoked Charcoal",
+        "canonical": "#111116",
+        "tonalRamp": [
+          "#08080B",
+          "#111116",
+          "#1C1C24",
+          "#282833",
+          "#383847",
+          "#4C4C5E",
+          "#65657B",
+          "#82829A"
+        ]
+      },
+      "bg-elevated": {
+        "role": "neutral",
+        "displayName": "Graphite Sheet",
+        "canonical": "#1A1A22",
+        "tonalRamp": [
+          "#0C0C10",
+          "#14141B",
+          "#1A1A22",
+          "#262632",
+          "#373746",
+          "#4D4D60",
+          "#67677D",
+          "#85859D"
+        ]
+      },
+      "text-primary": {
+        "role": "neutral",
+        "displayName": "Starlight White",
+        "canonical": "#F0F0F5",
+        "tonalRamp": [
+          "#202028",
+          "#40404E",
+          "#656578",
+          "#8E8EA4",
+          "#B8B8CD",
+          "#D8D8E6",
+          "#F0F0F5",
+          "#FFFFFF"
+        ]
+      },
+      "text-secondary": {
+        "role": "neutral",
+        "displayName": "Muted Steel",
+        "canonical": "#7A7E8C",
+        "tonalRamp": [
+          "#18191E",
+          "#2E3039",
+          "#474A56",
+          "#626675",
+          "#7A7E8C",
+          "#9CA0AC",
+          "#C0C3CC",
+          "#E4E5EB"
+        ]
+      },
+      "text-muted": {
+        "role": "neutral",
+        "displayName": "Deep Muted",
+        "canonical": "#3D404E",
+        "tonalRamp": [
+          "#111217",
+          "#20222B",
+          "#2F323D",
+          "#3D404E",
+          "#525666",
+          "#6D7182",
+          "#8D91A1",
+          "#B1B4C0"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Oversized hero headlines and display name banner."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Major section title headers."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Project cards, company roles, award titles."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Primary narrative text and experience bullet points."
+      },
+      "label": {
+        "displayName": "Label / Telemetry",
+        "purpose": "Monospace tags, timestamps, code markers, category pills."
+      },
+      "label-sm": {
+        "displayName": "Small Telemetry Label",
+        "purpose": "11px monospace pills, dates, and technology badges."
+      }
+    },
+    "shadows": [
+      {
+        "name": "glow-primary",
+        "value": "0 4px 20px rgba(79, 156, 249, 0.15)",
+        "purpose": "Luminescent ambient aura behind primary action buttons."
+      },
+      {
+        "name": "card-hover",
+        "value": "0 12px 40px rgba(79, 156, 249, 0.12), 0 2px 8px rgba(0, 0, 0, 0.2)",
+        "purpose": "Responsive interactive lift for cards and bento containers."
+      },
+      {
+        "name": "award-glow",
+        "value": "0 8px 40px rgba(249, 123, 79, 0.18), 0 2px 8px rgba(0, 0, 0, 0.2)",
+        "purpose": "Warm halo for 1st-prize hackathon banner."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out-smooth",
+        "value": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Default easing curve for UI fade-ins and interactive state transitions."
+      },
+      {
+        "name": "float-slow",
+        "value": "float 7s ease-in-out infinite",
+        "purpose": "Gentle floating ambient motion for hero info cards."
+      }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Primary interactive call-to-action with electric gradient and glow shadow.",
+      "html": "<button class=\"ds-btn-primary\"><span>View My Work</span><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 20\" fill=\"currentColor\" width=\"16\" height=\"16\"><path fill-rule=\"evenodd\" d=\"M10 3a.75.75 0 0 1 .75.75v10.638l3.96-4.158a.75.75 0 1 1 1.08 1.04l-5.25 5.5a.75.75 0 0 1-1.08 0l-5.25-5.5a.75.75 0 1 1 1.08-1.04l3.96 4.158V3.75A.75.75 0 0 1 10 3Z\" clip-rule=\"evenodd\"/></svg></button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 9999px; padding: 12px 28px; font-size: 14px; font-weight: 500; color: #ffffff; background: linear-gradient(135deg, #4F9CF9 0%, #3D8EF0 100%); border: none; cursor: pointer; box-shadow: 0 4px 20px rgba(79, 156, 249, 0.15); transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease; font-family: Inter, sans-serif; } .ds-btn-primary:hover { transform: translateY(-2px); filter: brightness(1.1); box-shadow: 0 6px 24px rgba(79, 156, 249, 0.25); } .ds-btn-primary:active { transform: translateY(0); }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Ghost button with hairline border and hover accent shift.",
+      "html": "<button class=\"ds-btn-secondary\"><span>Resume ↗</span></button>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 9999px; padding: 12px 28px; font-size: 14px; font-weight: 500; color: #F0F0F5; background: transparent; border: 1px solid rgba(255, 255, 255, 0.10); cursor: pointer; transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease; font-family: Inter, sans-serif; } .ds-btn-secondary:hover { transform: translateY(-2px); border-color: #4F9CF9; color: #4F9CF9; box-shadow: 0 4px 16px rgba(79, 156, 249, 0.15); } .ds-btn-secondary:active { transform: translateY(0); }"
+    },
+    {
+      "name": "Skill Badge",
+      "kind": "chip",
+      "refersTo": "skill-badge",
+      "description": "Monospace technology pill with icon and hover lift.",
+      "html": "<span class=\"ds-skill-badge\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#4F9CF9\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polygon points=\"12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2\"/></svg><span>Next.js</span></span>",
+      "css": ".ds-skill-badge { display: inline-flex; align-items: center; gap: 6px; font-family: 'JetBrains Mono', monospace; font-size: 13px; padding: 6px 12px; border-radius: 9999px; background: #1A1A22; color: #7A7E8C; border: 1px solid rgba(255, 255, 255, 0.06); cursor: default; user-select: none; transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease; } .ds-skill-badge:hover { transform: translateY(-1px); background: rgba(79, 156, 249, 0.08); color: #F0F0F5; border-color: rgba(79, 156, 249, 0.25); }"
+    },
+    {
+      "name": "Card Surface",
+      "kind": "card",
+      "refersTo": "card-surface",
+      "description": "Container card with 1px top-edge glass highlight and ambient hover bloom.",
+      "html": "<div class=\"ds-card\"><div class=\"ds-card-header\"><span class=\"ds-badge\">01</span><h3 class=\"ds-card-title\">FoodMart AI</h3></div><p class=\"ds-card-desc\">React 18 SPA e-commerce platform with Gemini 1.5 Flash Vision recipe suggestions.</p></div>",
+      "css": ".ds-card { position: relative; background: #111116; border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 16px; padding: 24px 28px; font-family: Inter, sans-serif; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; overflow: hidden; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); } .ds-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: rgba(255, 255, 255, 0.04); pointer-events: none; } .ds-card:hover { transform: translateY(-4px); border-color: #4F9CF9; box-shadow: 0 12px 40px rgba(79, 156, 249, 0.12), 0 2px 8px rgba(0, 0, 0, 0.2); } .ds-card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; } .ds-badge { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 6px; background: #1A1A22; color: #4F9CF9; border: 1px solid rgba(79, 156, 249, 0.25); } .ds-card-title { font-family: 'Be Vietnam Pro', sans-serif; font-size: 18px; font-weight: 700; color: #F0F0F5; margin: 0; } .ds-card-desc { font-size: 14px; line-height: 1.6; color: #7A7E8C; margin: 0; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Precision Console",
+    "overview": "The design system bridges European enterprise software ergonomics with modern high-craft developer portfolio aesthetics. Rooted in dark obsidian depths, the interface functions like a finely tuned developer console: disciplined, dense with signal, and luminous at key points of interaction. Every layout decision prioritizes fast scanning, technical credibility, and immediate proof of competence.\n\nThe aesthetic avoids playful SaaS gradients and generic startup pastels in favor of high-contrast editorial typography (Be Vietnam Pro extra-bold), monospace telemetry metadata (JetBrains Mono), and dark ink-and-signal surfaces. Subtle atmospheric elements—such as a persistent 0.022-opacity procedural noise texture and 64px background gridlines—provide physical grounding without distracting from project case studies and code artifacts.",
+    "keyCharacteristics": [
+      "High Signal-to-Noise Ratio: Clean data visualization and zero decorative fluff; every visual element communicates role, stack, or achievement.",
+      "Ink & Signal Luminosity: Deep onyx and smoked charcoal backgrounds punctuated by electric Signal Azure (#4F9CF9) and warm Ember Coral (#F97B4F).",
+      "Dual Personality: Robust and structured for quick technical evaluation, yet fluid and tactile during interactive exploration."
+    ],
+    "rules": [
+      {
+        "name": "The Rarity of Signal Rule",
+        "body": "Signal Azure is used on ≤10% of any viewport. When everything glows, nothing is significant.",
+        "section": "colors"
+      },
+      {
+        "name": "The Dual Canvas Rule",
+        "body": "Dark mode is the primary expressive console experience; light mode translates the same contrast and structural ratios into a crisp, high-readability architectural sheet.",
+        "section": "colors"
+      },
+      {
+        "name": "The Monospace Telemetry Rule",
+        "body": "All metadata—dates, project categories, numerical indexes, roles, and technical badges—must render in JetBrains Mono. Prose and descriptive copy remain strictly in Inter.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat-At-Rest Rule",
+        "body": "All cards and containers remain completely flat at rest with 1px hairline borders. Elevation and luminous glows appear only as a physical response to cursor proximity and focus.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do wrap all metadata (dates, project categories, metrics, tech tags) in JetBrains Mono.",
+      "Do preserve the 1px top-edge glass highlight on card surfaces (.card-surface).",
+      "Do maintain WCAG 2.2 AA contrast standards for both light and dark themes.",
+      "Do restrict Ember Coral (#F97B4F) to top-tier honors and designated warm focal points.",
+      "Do keep button geometry strictly pill-shaped (rounded-full)."
+    ],
+    "donts": [
+      "Don't apply heavy drop shadows on resting cards; keep resting surfaces flat with hairline borders.",
+      "Don't use generic stock gradient backgrounds or neon rainbow palettes.",
+      "Don't alter the fixed A4 portrait print layout rules defined for /resume.",
+      "Don't allow primary accent text or glows to exceed 10% of any viewport."
+    ]
+  }
+}

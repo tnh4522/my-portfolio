@@ -13,9 +13,19 @@ interface DrupalCardProps {
 export default function DrupalCard({ project, onClick }: DrupalCardProps) {
   const [isHovered, setIsHovered] = useState(false);
 
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      onClick?.();
+    }
+  };
+
   return (
     <div
-      className="group relative bg-bg-surface rounded-xl overflow-hidden border transition-all duration-500 hover:-translate-y-2 cursor-pointer"
+      role="button"
+      tabIndex={0}
+      aria-label={`View ${project.title} details`}
+      className="group relative bg-bg-surface rounded-xl overflow-hidden border transition-all duration-500 hover:-translate-y-2 cursor-pointer focus-visible:outline-2 focus-visible:outline-accent-blue"
       style={{
         borderColor: isHovered ? 'var(--accent-primary)' : 'var(--border)',
         boxShadow: isHovered
@@ -25,6 +35,7 @@ export default function DrupalCard({ project, onClick }: DrupalCardProps) {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={onClick}
+      onKeyDown={handleKeyDown}
     >
       {/* Image Container */}
       <div className="relative w-full overflow-hidden" style={{ aspectRatio: '16/10' }}>
@@ -60,9 +71,9 @@ export default function DrupalCard({ project, onClick }: DrupalCardProps) {
           </span>
         </div>
 
-        {/* Hover Description */}
+        {/* Hover Description (Desktop) */}
         <div
-          className="absolute bottom-0 left-0 right-0 p-5 transition-all duration-500 z-10"
+          className="absolute bottom-0 left-0 right-0 p-5 transition-all duration-500 z-10 hidden sm:block"
           style={{
             transform: isHovered ? 'translateY(0)' : 'translateY(10px)',
             opacity: isHovered ? 1 : 0,
@@ -77,9 +88,14 @@ export default function DrupalCard({ project, onClick }: DrupalCardProps) {
       {/* Card Footer */}
       <div className="p-5">
         {/* Title */}
-        <h3 className="font-display font-bold text-text-primary text-base mb-3 group-hover:text-accent-blue transition-colors duration-300">
+        <h3 className="font-display font-bold text-text-primary text-base mb-2 group-hover:text-accent-blue transition-colors duration-300">
           {project.title}
         </h3>
+
+        {/* Mobile Description */}
+        <p className="text-text-secondary text-xs leading-relaxed mb-3 sm:hidden">
+          {project.description}
+        </p>
 
         {/* Tags */}
         <div className="flex flex-wrap gap-1.5">

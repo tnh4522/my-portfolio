@@ -112,7 +112,6 @@ export default function About() {
             {/* Education card */}
             <motion.div
               className="card-surface rounded-2xl p-6"
-              style={{ borderLeft: '3px solid var(--accent-primary)' }}
               variants={skip ? undefined : fadeUp}
             >
               <span
@@ -137,7 +136,7 @@ export default function About() {
                     className="font-mono text-[11px] px-2.5 py-1 rounded-full"
                     style={{
                       background: 'var(--bg-elevated)',
-                      color: 'var(--text-muted)',
+                      color: 'var(--text-secondary)',
                     }}
                   >
                     {tag}

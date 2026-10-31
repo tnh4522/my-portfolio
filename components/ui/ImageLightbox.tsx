@@ -54,6 +54,9 @@ export default function ImageLightbox({
     <AnimatePresence>
       {isOpen && project && (
         <motion.div
+          role="dialog"
+          aria-modal="true"
+          aria-label={project.title}
           className="fixed inset-0 z-[100] flex items-center justify-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

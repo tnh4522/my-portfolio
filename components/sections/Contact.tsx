@@ -70,7 +70,7 @@ export default function Contact() {
   return (
     <section id="contact">
       <div className="container-inner">
-        <SectionHeading title="Let's Work Together" index={6} />
+        <SectionHeading title="Let's Work Together" index={7} />
 
         <motion.div
           initial={prefersReducedMotion ? undefined : { opacity: 0, y: 28 }}

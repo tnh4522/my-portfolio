@@ -115,7 +115,7 @@ const floatingCards = [
                 <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" strokeWidth="6" />
               </g>
             </svg>
-            <span>English — Advanced (TOEIC 510)</span>
+            <span>English — Intermediate (TOEIC 510)</span>
           </span>
           <span className="font-display text-sm font-bold text-text-primary inline-flex items-center gap-2">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2" className="w-5 h-3.5 rounded-sm shrink-0">
@@ -123,7 +123,7 @@ const floatingCards = [
               <rect width="1" height="2" x="1" fill="#fff" />
               <rect width="1" height="2" x="2" fill="#ED2939" />
             </svg>
-            <span>French — Basic (DELF B1)</span>
+            <span>French — Intermediate (DELF B1)</span>
           </span>
         </div>
       </>
@@ -251,21 +251,15 @@ export default function Hero() {
 
             {/* Name — display scale, editorial */}
             <motion.h1
-              className="font-display font-extrabold text-text-primary"
+              className="font-display font-extrabold text-text-primary tracking-tight"
               style={{
-                fontSize: 'var(--text-display)',
-                lineHeight: 1.0,
+                fontSize: 'clamp(2.5rem, 6vw, 4.75rem)',
+                lineHeight: 1.05,
                 letterSpacing: '-0.03em',
               }}
               variants={skip ? undefined : itemVariants}
             >
-              {PERSONAL.name.toUpperCase()
-                .split(' ')
-                .map((word, i) => (
-                  <span key={i} className="block">
-                    {word}
-                  </span>
-                ))}
+              {PERSONAL.name.toUpperCase()}
             </motion.h1>
 
             {/* Role */}

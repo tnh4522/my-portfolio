@@ -9,6 +9,7 @@ import Link from 'next/link';
 const NAV_LINKS = [
   { label: 'About', href: '#about' },
   { label: 'Experience', href: '#experience' },
+  { label: 'Client Work', href: '#drupal-portfolio' },
   { label: 'Projects', href: '#projects' },
   { label: 'Awards', href: '#awards' },
   { label: 'Skills', href: '#skills' },

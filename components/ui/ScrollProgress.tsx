@@ -48,7 +48,7 @@ export default function ScrollProgress() {
             exit={{ opacity: 0, scale: 0.8 }}
             transition={{ duration: 0.2 }}
             onClick={scrollToTop}
-            className="fixed bottom-8 right-8 z-40 p-3 rounded-full bg-accent-blue text-bg-base shadow-lg hover:shadow-xl hover:scale-105 transition-transform"
+            className="fixed bottom-8 right-8 z-40 p-3 rounded-full bg-accent-blue text-white shadow-lg hover:brightness-110 hover:shadow-xl hover:scale-105 transition-all cursor-pointer"
             aria-label="Back to top"
           >
             <ArrowUp size={20} />

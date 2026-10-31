@@ -24,7 +24,7 @@ export default function Projects() {
   return (
     <section id="projects">
       <div className="container-inner">
-        <SectionHeading title="Projects" index={3} />
+        <SectionHeading title="Personal & AI Projects" index={4} />
 
         {/* ── Top-to-bottom Stack ── */}
         <motion.div

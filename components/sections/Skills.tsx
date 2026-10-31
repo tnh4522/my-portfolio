@@ -24,7 +24,7 @@ export default function Skills() {
   return (
     <section id="skills">
       <div className="container-inner">
-        <SectionHeading title="Skills" index={5} />
+        <SectionHeading title="Skills" index={6} />
 
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 gap-5"
